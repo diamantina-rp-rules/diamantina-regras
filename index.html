@@ -101,6 +101,118 @@ footer{text-align:center;border-top:1px solid var(--line);padding:22px;color:var
 .backdrop{display:none}
 @media(max-width:900px){.hero{width:100%;max-width:100%}.sidebar{width:275px;transform:translateX(-100%)}.sidebar.open{transform:translateX(0)}main{margin-left:0}.mobile-menu{display:block}.topbar{padding-left:15px}.backdrop.show{display:block;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:15}.content{margin:0 auto 55px;width:min(900px,calc(100% - 38px))}}
 @media(max-width:560px){.hero{height:190px;margin-bottom:22px}.hero-title{letter-spacing:-2px}.hero-sub{letter-spacing:7px}.topbar{height:auto;min-height:68px;flex-wrap:wrap;padding:10px 12px;gap:9px}.top-brand{font-size:10px}.top-brand img{width:31px;height:31px}.search-wrap{order:3;flex-basis:100%;max-width:none}.top-actions{margin-left:auto}.icon-btn{width:35px;height:35px}.content{margin-top:30px}.tiles{grid-template-columns:1fr}.page-tools{align-items:flex-start;flex-direction:column}.lead{font-size:14px}h1{font-size:34px}}
+
+/* ===== DIAMANTINA UI 2.0 — interface renovada ===== */
+:root{
+  --bg:#1b1d20;--sidebar:#17191c;--surface:#202328;--surface2:#282d34;
+  --line:#343b45;--blue:#3978f6;--blue2:#63a0ff;--text:#f4f6fa;
+  --muted:#8995a5;--body:#c5ccd6;--shadow:0 16px 42px rgba(0,0,0,.24);
+}
+:root.light{
+  --bg:#f3f5f9;--sidebar:#fff;--surface:#fff;--surface2:#eef3fb;
+  --line:#dce3ed;--blue:#2868df;--blue2:#2868df;--text:#172235;
+  --muted:#718096;--body:#40516a;--shadow:0 14px 34px rgba(28,50,85,.09);
+}
+body{background:var(--bg);font-family:Inter,system-ui,sans-serif;letter-spacing:.01em}
+.sidebar{
+  width:220px;padding:17px 10px 14px;background:var(--sidebar);
+  border-right:1px solid var(--line);box-shadow:8px 0 28px rgba(0,0,0,.08)
+}
+.brand{min-height:68px;padding:5px 8px 17px;margin-bottom:12px;gap:9px}
+.logo{width:43px;height:43px}
+.brand strong{font-size:11px;letter-spacing:1.5px}
+.brand small{font-size:8px;letter-spacing:1.3px}
+.label,.group{font-size:9px;letter-spacing:1.45px;padding:11px 8px 6px;color:var(--muted)}
+.nav a,.nav-toggle{
+  min-height:34px;padding:7px 8px;margin:2px 0;border-radius:7px;
+  font-size:11px;line-height:1.35;gap:8px
+}
+.nav a:hover,.nav a.active,.nav-parent.expanded>.nav-toggle{
+  background:var(--surface2);color:var(--blue2)
+}
+.nav a.active{box-shadow:inset 2px 0 var(--blue)}
+.nav a .nav-num{font-size:13px;min-width:17px}
+.nav-children{margin-left:10px;padding-left:9px;border-left:1px solid var(--line)}
+.nav-children a{font-size:10.5px;padding:7px 6px}
+.nav-parent.expanded>.nav-toggle{font-weight:700}
+.footer-side{font-size:9px;padding:13px 8px}
+main{margin-left:220px;min-height:100vh}
+.topbar{
+  height:52px;padding:0 25px 0 30px;gap:15px;
+  background:linear-gradient(100deg,#2865d8,#3979f5);
+  box-shadow:0 5px 20px rgba(20,75,170,.22)
+}
+.top-brand{font-size:11px;letter-spacing:1.15px}
+.top-brand img{width:31px;height:31px}
+.search-wrap{max-width:440px}
+.search-wrap input{height:35px;border-radius:8px;font-size:11px;background:rgba(10,38,94,.25)}
+.icon-btn{width:35px;height:35px;border-radius:8px}
+.content{
+  width:min(760px,calc(100% - 64px));margin:27px 32px 54px;flex:1
+}
+.hero{
+  width:100%;max-width:100%;height:205px;margin:0 0 25px;border-radius:10px;
+  background:
+   radial-gradient(ellipse at 25% 20%,rgba(0,226,226,.32),transparent 42%),
+   radial-gradient(ellipse at 85% 80%,rgba(32,113,255,.34),transparent 48%),
+   repeating-linear-gradient(135deg,transparent 0 22px,rgba(92,211,255,.075) 23px 25px),
+   linear-gradient(125deg,#071d2b,#063e4a 48%,#082b4b)
+}
+.hero:before{background:linear-gradient(90deg,rgba(0,0,0,.18),transparent 45%,rgba(0,0,0,.12))}
+.hero-title{font-size:clamp(42px,6vw,76px);letter-spacing:-3.5px}
+.hero-sub{font-size:10px;letter-spacing:10px}
+.breadcrumb{font-size:9px;letter-spacing:1.3px;margin:4px 0 13px}
+.page-tools{padding-bottom:14px;margin-bottom:24px}
+.page-tools .hint{font-size:9px;letter-spacing:.8px}
+.copy-btn{border-radius:7px;padding:8px 11px;font-size:10px}
+.eyebrow{font-size:9px;letter-spacing:2px}
+h1{font-size:clamp(28px,3.4vw,38px);letter-spacing:-1.25px;margin:10px 0 11px}
+h2{font-size:18px;margin:28px 0 10px}
+h3{font-size:14px}
+p{font-size:13px;line-height:1.8}
+.lead{font-size:14px;line-height:1.7;margin:0 0 17px}
+.callout,.placeholder{border-radius:9px;font-size:11px;padding:15px 16px}
+.rules{font-size:12px;line-height:1.8;padding-left:22px}
+.rules li{padding:9px 4px}
+.penalty-heading{font-size:11px;color:var(--text);margin:0 0 12px;font-weight:600;letter-spacing:.5px}
+.penalty-tools{max-width:512px;display:flex;gap:8px;margin:12px 0 8px}
+.penalty-tools>input{height:34px;padding:8px 11px;border-radius:8px;font-size:11px;background:var(--surface)}
+.penalty-tools label{font-size:10px}
+.penalty-table{width:100%;max-width:512px;border-collapse:separate;border-spacing:0;font-size:10px;margin:0 0 25px}
+.penalty-table th{
+  background:var(--surface);padding:10px 11px;border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);font-size:9px;letter-spacing:.45px
+}
+.penalty-table th:first-child{border-left:1px solid var(--line);border-radius:8px 0 0 8px}
+.penalty-table th:last-child{border-right:1px solid var(--line);border-radius:0 8px 8px 0}
+.penalty-table td{padding:8px 9px;border-bottom:1px solid var(--line);font-size:10px;line-height:1.45}
+.penalty-table td:first-child{width:43%;border-right:1px solid var(--line)}
+.penalty-table td:nth-child(2){width:34%;border-right:1px solid var(--line)}
+.penalty-table td:last-child{width:23%;text-align:center}
+.penalty-table input{width:14px;height:14px;accent-color:var(--blue);pointer-events:none}
+.warning{max-width:512px;font-size:11px}
+.search-results{box-shadow:var(--shadow)}
+footer{font-size:9px;padding:17px}
+@media(min-width:1200px){.content{margin-left:32px}}
+@media(max-width:900px){
+ .sidebar{width:260px;transform:translateX(-100%)}
+ .sidebar.open{transform:translateX(0)}
+ main{margin-left:0}
+ .content{width:calc(100% - 36px);margin:22px 18px 45px}
+ .hero{width:100%;max-width:100%}
+}
+@media(max-width:560px){
+ .topbar{height:auto;min-height:58px;padding:9px 11px;gap:8px}
+ .top-brand{font-size:9px}
+ .search-wrap{order:3;flex-basis:100%;max-width:none}
+ .content{margin-top:17px}
+ .hero{height:160px}
+ .hero-title{font-size:42px;letter-spacing:-2px}
+ .hero-sub{letter-spacing:7px}
+ .penalty-tools{flex-wrap:wrap}
+ .penalty-tools>input{flex-basis:100%}
+}
+
 </style>
 </head>
 <body>
@@ -448,7 +560,7 @@ const pages = {
 <li>Todos os chamados devem conter descrição da situação ou problema.</li>
 <li>Chamados vagos como “Me ajude”, “Socorro”, “Vem cá lindo”, “Preciso conversar com você” ou “ADM quando der vem aqui” poderão ser ignorados.</li>
 </ol>`},
- suporte:{group:"ATENDIMENTO",title:"🛟 Suporte e Denúncias",lead:"Utilize os canais oficiais da Diamantina para solicitar ajuda ou encaminhar uma denúncia.",body:`<div class="placeholder">https://discord.gg/jeheAtjrh4</div>`}
+ suporte:{group:"ATENDIMENTO",title:"🛟 Suporte e Denúncias",lead:"Utilize os canais oficiais da Diamantina para solicitar ajuda ou encaminhar uma denúncia.",body:`<div class="placeholder">Adicione aqui o link oficial do Discord, o canal de tickets e as orientações de atendimento da administração da Diamantina.</div>`}
 };
 
 function placeholder(message){return `<div class="placeholder">📝 <strong>Conteúdo pendente</strong><br>${message}</div>`}
@@ -485,9 +597,25 @@ function buildMenu(){
 function showPage(id){
  if(!pages[id])id="inicio";currentPage=id;
  const data=pages[id],article=document.getElementById("content");
- article.innerHTML=`<div class="eyebrow">${data.group}</div><h1>${data.title}</h1><p class="lead">${data.lead}</p>${data.body}`;
+ const hero=document.querySelector(".hero");
+ if(hero) hero.style.display=id==="inicio"?"flex":"none";
+ let pageBody=data.body;
+ if(id==="punicao"){
+   const rows=pageBody.replace("</tbody></table>","").replace("</table>","");
+   pageBody=`<div class="penalty-heading">ADVERTÊNCIAS</div>
+   <table class="penalty-table"><thead><tr><th>QUEBRA DE REGRAS</th><th>TEMPO DE PRISÃO</th><th>ADVERTÊNCIA</th></tr></thead><tbody>${rows}</tbody></table>
+   <div class="penalty-tools"><input id="penaltySearch" type="search" placeholder="⌕  Buscar regra ou penalidade..."><label><input id="penaltyOnlyWarn" type="checkbox"> Somente com advertência</label></div>
+   <div class="penalty-table-wrap"></div>`;
+   const tableMatch=pageBody.match(/<table class="penalty-table">[\s\S]*?<\/table>/);
+   if(tableMatch) pageBody=pageBody.replace(tableMatch[0],`<div class="penalty-table-wrap">${tableMatch[0]}</div>`);
+ }
+ article.innerHTML=`<div class="eyebrow">${data.group}</div><h1>${data.title}</h1><p class="lead">${data.lead}</p>${pageBody}`;
  document.getElementById("breadcrumb").textContent="Diamantina / "+data.group+" / "+data.title;
  document.querySelectorAll(".nav a").forEach(a=>a.classList.toggle("active",a.dataset.page===id));
+ document.querySelectorAll(".nav-parent").forEach(parent=>{
+   const contains=parent.querySelector(`[data-page="${id}"]`);
+   if(contains) parent.classList.add("expanded");
+ });
  document.getElementById("searchResults").classList.remove("show");
  document.getElementById("searchInput").value="";
  document.getElementById("searchCount").textContent="";
@@ -534,7 +662,7 @@ function setTheme(light){
 document.getElementById("themeBtn").addEventListener("click",()=>setTheme(!document.documentElement.classList.contains("light")));
 document.getElementById("searchInput").addEventListener("input",runSearch);
 document.getElementById("searchInput").addEventListener("keydown",e=>{if(e.key==="Escape"){e.target.value="";runSearch()}});
-document.addEventListener("input",e=>{if(e.target.id==="penaltySearch"||e.target.id==="penaltyOnlyWarn"){const q=document.getElementById("penaltySearch").value.toLocaleLowerCase("pt-BR");const only=document.getElementById("penaltyOnlyWarn").checked;document.querySelectorAll(".penalty-table tbody tr").forEach(tr=>{tr.hidden=!(tr.innerText.toLocaleLowerCase("pt-BR").includes(q)&&(!only||tr.querySelector('input[type=checkbox]').checked));});}});
+document.addEventListener("input",e=>{if(e.target.id==="penaltySearch"||e.target.id==="penaltyOnlyWarn"){const search=document.getElementById("penaltySearch"),filter=document.getElementById("penaltyOnlyWarn");if(!search||!filter)return;const q=search.value.toLocaleLowerCase("pt-BR");const only=filter.checked;document.querySelectorAll(".penalty-table tbody tr").forEach(tr=>{const checkbox=tr.querySelector('input[type=checkbox]');tr.hidden=!(tr.innerText.toLocaleLowerCase("pt-BR").includes(q)&&(!only||(checkbox&&checkbox.checked)));});}});
 document.getElementById("year").textContent=new Date().getFullYear();
 buildMenu();
 let initial=location.hash.slice(1);showPage(pages[initial]?initial:"inicio");
