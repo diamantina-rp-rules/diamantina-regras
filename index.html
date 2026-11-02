@@ -3,174 +3,463 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diamantina Roleplay | Regras</title>
+<meta name="theme-color" content="#0878d1">
+<title>Diamantina Roleplay | Regulamento Oficial</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-:root {
-  --bg:#090f1b;
-  --sidebar:#0d1727;
-  --panel:#111f32;
-  --line:#233650;
-  --blue:#42aaff;
-  --text:#edf5ff;
-  --muted:#9aacc3;
+:root{
+  color-scheme:dark;
+  --bg:#0a111d;--sidebar:#0d1726;--surface:#111f31;--surface2:#15263b;
+  --line:#263a53;--blue:#1689e8;--blue2:#42aaff;--text:#edf5ff;
+  --muted:#9aacc3;--body:#c4d0df;--shadow:0 14px 40px rgba(0,0,0,.18);
+}
+:root.light{
+  color-scheme:light;
+  --bg:#f3f6fa;--sidebar:#fff;--surface:#fff;--surface2:#edf4fb;
+  --line:#dce5ef;--blue:#0878d1;--blue2:#0878d1;--text:#17283b;
+  --muted:#66788d;--body:#40536a;--shadow:0 12px 32px rgba(22,48,77,.08);
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif}
-.sidebar{position:fixed;left:0;top:0;bottom:0;width:275px;background:var(--sidebar);border-right:1px solid var(--line);padding:25px 17px;overflow-y:auto;z-index:5}
-.brand{display:flex;align-items:center;gap:12px;padding:5px 8px 30px}
-.logo {
-    width: 85px;
-    height: 65px;
-    object-fit: contain;
-    background: transparent;
-    border-radius: 0;
-}
-.brand strong{display:block;font-size:14px;letter-spacing:1px}
-.brand small{color:var(--muted);font-size:9px;letter-spacing:2px}
-.label{font-size:10px;letter-spacing:2px;color:#71849e;font-weight:800;padding:12px}
-.nav a{display:block;color:#aebed2;text-decoration:none;padding:10px 12px;margin:3px 0;border-radius:8px;font-size:13px;cursor:pointer}
-.nav a:hover,.nav a.active{background:#17304c;color:white}
-.nav a.active{border-left:3px solid var(--blue)}
-.group{padding:22px 12px 8px;font-size:10px;letter-spacing:1.5px;color:#71849e;font-weight:800}
-.footer-side{position:relative;margin-top:35px;border-top:1px solid var(--line);padding:18px 10px;color:#91a5be;font-size:10px}
-main{margin-left:275px;min-height:100vh;display:flex;flex-direction:column}
-header{height:65px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 6%;font-size:11px;letter-spacing:1.5px;color:var(--muted)}
-.status{color:#64d6a4}
-.status:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#64d6a4;margin-right:8px}
-.content{width:min(900px,88%);margin:70px auto;flex:1}
-.eyebrow{color:var(--blue);font-size:11px;letter-spacing:2px;font-weight:800}
-h1{font-size:clamp(34px,5vw,52px);letter-spacing:-2px;line-height:1.15;margin:12px 0 20px}
-h2{font-size:21px;margin-top:38px}
-p{color:#b7c5d8;font-size:15px;line-height:1.8}
-.lead{font-size:17px}
-.callout{background:#11243a;border:1px solid #254a70;border-left:3px solid var(--blue);padding:18px 20px;border-radius:10px;margin:28px 0;color:#c7d8eb;line-height:1.8}
-.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
-.tile{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;cursor:pointer;transition:.2s}
-.tile:hover{border-color:var(--blue);transform:translateY(-3px)}
-.tile b{display:block;color:var(--blue);font-size:11px;margin-bottom:9px}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;min-height:100vh}
+button,input{font:inherit}
+button{cursor:pointer}
+.sidebar{position:fixed;inset:0 auto 0 0;width:286px;background:var(--sidebar);border-right:1px solid var(--line);padding:20px 15px 16px;overflow-y:auto;z-index:20;transition:transform .25s ease}
+.brand{display:flex;align-items:center;gap:12px;padding:7px 9px 22px;border-bottom:1px solid var(--line);margin-bottom:16px}
+.logo{width:58px;height:54px;object-fit:contain}
+.brand strong{display:block;font-size:13px;letter-spacing:1.3px}
+.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:1.5px;margin-top:5px}
+.label,.group{font-size:10px;letter-spacing:1.6px;color:var(--muted);font-weight:800;padding:12px 10px 7px}
+.nav a{display:flex;align-items:center;gap:9px;color:var(--body);text-decoration:none;padding:9px 11px;margin:2px 0;border-radius:8px;font-size:12px;line-height:1.4;cursor:pointer;transition:.15s}
+.nav a:hover,.nav a.active{background:var(--surface2);color:var(--text)}
+.nav a.active{box-shadow:inset 3px 0 var(--blue2)}
+.nav a .nav-num{font-size:9px;color:var(--muted);min-width:18px}
+.footer-side{margin-top:24px;border-top:1px solid var(--line);padding:16px 10px;color:var(--muted);font-size:10px;line-height:1.8}
+main{margin-left:286px;min-height:100vh;display:flex;flex-direction:column}
+.topbar{height:72px;position:sticky;top:0;z-index:10;background:linear-gradient(110deg,#0868b7,#168fe8);display:flex;align-items:center;gap:18px;padding:0 clamp(18px,4vw,54px);box-shadow:0 5px 22px rgba(0,70,130,.2)}
+.top-brand{display:flex;align-items:center;gap:10px;color:white;font-size:12px;font-weight:800;letter-spacing:1px;white-space:nowrap}
+.top-brand img{width:37px;height:37px;object-fit:contain}
+.search-wrap{position:relative;flex:1;max-width:570px;margin-left:auto}
+.search-wrap input{width:100%;height:40px;border:1px solid rgba(255,255,255,.25);border-radius:9px;background:rgba(0,35,75,.22);color:#fff;padding:0 42px 0 40px;outline:none;font-size:12px}
+.search-wrap input::placeholder{color:rgba(255,255,255,.78)}
+.search-wrap input:focus{border-color:white;background:rgba(0,35,75,.32)}
+.search-icon{position:absolute;left:13px;top:11px;color:white;font-size:16px}
+.search-count{position:absolute;right:12px;top:13px;color:white;font-size:10px}
+.top-actions{display:flex;gap:8px}
+.icon-btn{width:39px;height:39px;border:1px solid rgba(255,255,255,.3);border-radius:9px;background:rgba(0,35,75,.2);color:white;font-size:17px}
+.icon-btn:hover{background:rgba(0,35,75,.38)}
+.mobile-menu{display:none}
+.content{width:min(940px,calc(100% - 64px));margin:55px auto 70px;flex:1}
+.breadcrumb{color:var(--muted);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:16px}
+.eyebrow{color:var(--blue2);font-size:10px;letter-spacing:2px;font-weight:800}
+h1{font-size:clamp(30px,4.5vw,48px);letter-spacing:-1.8px;line-height:1.13;margin:12px 0 18px}
+h2{font-size:20px;margin:34px 0 12px;letter-spacing:-.4px}
+h3{font-size:15px;margin:25px 0 9px}
+p{color:var(--body);font-size:14px;line-height:1.85}
+.lead{font-size:16px;max-width:820px}
+.callout{background:var(--surface2);border:1px solid var(--line);border-left:3px solid var(--blue);padding:17px 19px;border-radius:10px;margin:25px 0;color:var(--body);font-size:13px;line-height:1.8}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:22px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:17px;text-align:left;color:var(--text);transition:.18s}
+.tile:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:var(--shadow)}
+.tile b{display:block;color:var(--blue2);font-size:10px;margin-bottom:8px;letter-spacing:1px}
 .tile strong{display:block;font-size:13px}
-.tile span{display:block;color:var(--muted);font-size:11px;margin-top:7px}
-.rules{padding-left:23px;color:#c1cede;line-height:1.8}
-.rules li{padding:10px 4px;border-bottom:1px solid #1c2b40}
-.rules li::marker{color:var(--blue)}
-.warning{padding:17px;background:#332719;border:1px solid #634a2b;border-radius:9px;color:#ffd18a;font-size:13px;line-height:1.8}
-footer{text-align:center;border-top:1px solid var(--line);padding:22px;color:#71849e;font-size:11px}
-.menu{display:none}
-@media(max-width:800px){
-.sidebar{transform:translateX(-100%);transition:.25s;width:270px}
-.sidebar.open{transform:translateX(0)}
-main{margin-left:0}
-.menu{display:block;position:fixed;z-index:8;top:13px;left:13px;background:#17304c;color:white;border:1px solid var(--line);padding:9px 13px;border-radius:8px}
-header{padding-left:65px}
-.content{margin:45px auto}
-.tiles{grid-template-columns:1fr}
-}
+.tile span{display:block;color:var(--muted);font-size:11px;margin-top:7px;line-height:1.6}
+.rules{padding-left:24px;color:var(--body);line-height:1.85;font-size:13px}
+.rules li{padding:10px 5px;border-bottom:1px solid var(--line)}
+.rules li::marker{color:var(--blue2);font-weight:800}
+.warning{padding:16px;background:rgba(190,122,34,.1);border:1px solid rgba(190,122,34,.35);border-radius:9px;color:#d99b45;font-size:12px;line-height:1.8;margin:22px 0}
+.page-tools{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:28px}
+.page-tools .hint{font-size:10px;color:var(--muted)}
+.copy-btn{border:1px solid var(--line);background:var(--surface);color:var(--text);padding:9px 13px;border-radius:8px;font-size:11px;font-weight:700}
+.copy-btn:hover{border-color:var(--blue);color:var(--blue2)}
+.copy-btn.copied{border-color:#269b70;color:#269b70}
+.placeholder{border:1px dashed var(--line);background:var(--surface);padding:18px;border-radius:10px;color:var(--muted);font-size:12px;line-height:1.8}
+.search-results{margin:18px 0 25px;background:var(--surface);border:1px solid var(--line);border-radius:11px;overflow:hidden;display:none}
+.search-results.show{display:block}
+.search-results-head{padding:12px 15px;border-bottom:1px solid var(--line);font-size:11px;font-weight:800}
+.result-item{display:block;padding:12px 15px;border-bottom:1px solid var(--line);color:var(--text);text-decoration:none;cursor:pointer}
+.result-item:last-child{border-bottom:0}
+.result-item:hover{background:var(--surface2)}
+.result-item strong{font-size:12px;display:block}
+.result-item span{font-size:10px;color:var(--muted);display:block;margin-top:5px;line-height:1.6}
+mark{background:rgba(22,137,232,.22);color:inherit;border-radius:2px}
+.no-results{padding:16px;color:var(--muted);font-size:12px}
+footer{text-align:center;border-top:1px solid var(--line);padding:22px;color:var(--muted);font-size:10px}
+.backdrop{display:none}
+@media(max-width:900px){.sidebar{width:275px;transform:translateX(-100%)}.sidebar.open{transform:translateX(0)}main{margin-left:0}.mobile-menu{display:block}.topbar{padding-left:15px}.backdrop.show{display:block;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:15}.content{margin:38px auto 55px;width:min(900px,calc(100% - 38px))}}
+@media(max-width:560px){.topbar{height:auto;min-height:68px;flex-wrap:wrap;padding:10px 12px;gap:9px}.top-brand{font-size:10px}.top-brand img{width:31px;height:31px}.search-wrap{order:3;flex-basis:100%;max-width:none}.top-actions{margin-left:auto}.icon-btn{width:35px;height:35px}.content{margin-top:30px}.tiles{grid-template-columns:1fr}.page-tools{align-items:flex-start;flex-direction:column}.lead{font-size:14px}h1{font-size:34px}}
 </style>
 </head>
 <body>
-
-<button class="menu" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
-
-<aside class="sidebar">
-<div class="brand">
-<img src="./diamantina-logo.png" class="logo" alt="Diamantina Roleplay">
-<div><strong>DIAMANTINA</strong><small>ROLEPLAY · REGULAMENTO</small></div>
-</div>
-
-<div class="label">DOCUMENTAÇÃO</div>
-<nav class="nav">
-<a class="active" onclick="page('inicio',this)">Início</a>
-
-<div class="group">REGRAS GERAIS</div>
-<a onclick="page('aplicativos',this)">Aplicativos e Chamados</a>
-<a onclick="page('roleplay',this)">Regras de Roleplay</a>
-<a onclick="page('safe',this)">Safe Zones</a>
-<a onclick="page('acoes',this)">Ações e Abordagens</a>
-
-<div class="group">SERVIÇOS</div>
-<a onclick="page('publicos',this)">Serviços Públicos</a>
-<a onclick="page('faccoes',this)">Organizações</a>
-
-<div class="group">SUPORTE</div>
-<a onclick="page('suporte',this)">Suporte e Denúncias</a>
-</nav>
-
-<div class="footer-side">
-DIAMANTINA ROLEPLAY<br>
-Regras sujeitas a atualização.
-</div>
+<div class="backdrop" id="backdrop" onclick="toggleMenu(false)"></div>
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <img src="./diamantina-logo.png" class="logo" alt="Logo oficial Diamantina" onerror="this.style.display='none'">
+    <div><strong>DIAMANTINA</strong><small>ROLEPLAY · REGULAMENTO</small></div>
+  </div>
+  <div class="label">DOCUMENTAÇÃO OFICIAL</div>
+  <nav class="nav" id="navigation"></nav>
+  <div class="footer-side">DIAMANTINA ROLEPLAY<br>Consulte sempre a versão mais recente do regulamento.</div>
 </aside>
-
 <main>
-<header>
-<span>DIAMANTINA ROLEPLAY</span>
-<span class="status">CENTRAL DE REGRAS</span>
-</header>
-
-<article class="content" id="content"></article>
-
-<footer>© <span id="year"></span> Diamantina Roleplay · Todos os direitos reservados.</footer>
+  <header class="topbar">
+    <button class="icon-btn mobile-menu" aria-label="Abrir menu" onclick="toggleMenu()">☰</button>
+    <div class="top-brand"><img src="./diamantina-logo.png" alt="" onerror="this.style.display='none'"><span>DIAMANTINA ROLEPLAY</span></div>
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input id="searchInput" type="search" placeholder="Pesquisar regras por nome ou conteúdo..." autocomplete="off" aria-label="Pesquisar regras">
+      <span class="search-count" id="searchCount"></span>
+    </div>
+    <div class="top-actions"><button class="icon-btn" id="themeBtn" title="Alternar tema" aria-label="Alternar tema">☼</button></div>
+  </header>
+  <section class="content">
+    <div class="breadcrumb" id="breadcrumb">Diamantina / Regulamento</div>
+    <div class="page-tools"><span class="hint">CENTRAL DE REGRAS · DIAMANTINA ROLEPLAY</span><button class="copy-btn" id="copyBtn" onclick="copyCurrentPage()">▣ &nbsp; Copiar conteúdo</button></div>
+    <div class="search-results" id="searchResults"></div>
+    <article id="content"></article>
+  </section>
+  <footer>© <span id="year"></span> Diamantina Roleplay · Todos os direitos reservados.</footer>
 </main>
-
 <script>
+const menuGroups = [
+ {label:"INÍCIO DO REGULAMENTO",items:[["inicio","Início de todo regulamento"],["basicas","Regras básicas"],["personagem","Regras de personagem"],["punicao","Sistema de punição"]]},
+ {label:"ROLEPLAY E PERSONAGENS",items:[["roleplay","Regras de Roleplay"],["powergaming","Power Gaming"],["trash","Trash RP"],["anoes","Regras de Anões"],["criancas","Regras de Crianças"],["gravidez","Regras de Gravidez"],["safe","Área segura"]]},
+ {label:"AÇÕES E EVENTOS",items:[["airdrop","Regras Air Drop"],["carroforte","Regras do Carro-Forte"],["acoes","Ações de rua"],["perseguicao","Perseguição"],["sequestro","Sequestro"],["invasao","Invasão FAC vs FAC"],["baque","Regras de Baque"],["guerra","Guerras FAC x FAC"],["dominacao","Dominação"]]},
+ {label:"SERVIÇOS E ORGANIZAÇÕES",items:[["publicos","Serviços públicos"],["empregos","Empregos legais"],["policiais","Policiais"],["incursao","Regras de incursão"],["faccoes","Organizações"],["aplicativos","Aplicativos e Chamados"]]},
+ {label:"ATENDIMENTO",items:[["suporte","Suporte e Denúncias"]]}
+];
 const pages = {
-inicio: `
-<div class="eyebrow">BEM-VINDO À DIAMANTINA</div>
-<h1>Central de Regras</h1>
-<p class="lead">Bem-vindo à central oficial de regras da Diamantina Roleplay! Aqui você encontrará todas as orientações necessárias para aproveitar nossa cidade com respeito, responsabilidade e uma excelente experiência de roleplay.</p>
-<div class="callout"><strong>IMPORTANTE</strong><br>Todos os jogadores devem conhecer e respeitar o regulamento. O desconhecimento das regras não elimina a responsabilidade por uma infração.</div>
-<h2>Explore o regulamento</h2>
-<p>Selecione uma das categorias abaixo para consultar as regras da cidade.</p>
-<div class="tiles">
-<div class="tile" onclick="page('aplicativos')"><b>01</b><strong>Aplicativos e Chamados</strong><span>Comunicação e solicitações.</span></div>
-<div class="tile" onclick="page('roleplay')"><b>02</b><strong>Regras de Roleplay</strong><span>Regras de interpretação.</span></div>
-<div class="tile" onclick="page('suporte')"><b>03</b><strong>Suporte e Denúncias</strong><span>Atendimento e denúncias.</span></div>
-</div>`,
-
-aplicativos: `
-<div class="eyebrow">REGRAS GERAIS / COMUNICAÇÃO</div>
-<h1>Aplicativos e Chamados</h1>
-<p class="lead">Os aplicativos e canais de comunicação da cidade devem ser utilizados com respeito, responsabilidade e dentro da proposta de roleplay.</p>
-<ol class="rules">
-<li>Não é permitido criar contas falsas para obter vantagens ou prejudicar outros jogadores.</li>
-<li>Não publique conteúdos inadequados, ameaças, discriminação ou informações pessoais de terceiros.</li>
-<li>É proibido utilizar aplicativos para praticar perseguição, assédio ou qualquer forma de desrespeito.</li>
-<li>Negociações devem respeitar o contexto da interpretação e as regras gerais da cidade.</li>
-<li>É proibido abrir chamados falsos ou abusivos para prejudicar outros jogadores ou serviços públicos.</li>
-<li>Não utilize informações obtidas fora do personagem para identificar jogadores dentro da cidade.</li>
-<li>É proibido pressionar ou ameaçar alguém para revelar informações pessoais.</li>
-<li>Chamados para prefeitura, polícia, hospital e demais serviços devem ser feitos pelos canais apropriados.</li>
-<li>Evite abrir chamados repetidos sobre o mesmo assunto. Aguarde o atendimento.</li>
-</ol>
-<div class="callout"><strong>COMO ABRIR UM CHAMADO?</strong><br>Explique o ocorrido de maneira objetiva, informe o problema e apresente os detalhes necessários para que a equipe possa entender sua solicitação.</div>
-<div class="warning"><strong>ATENÇÃO:</strong> Chamados sem explicação ou enviados apenas para atrapalhar o atendimento poderão ser encerrados.</div>`,
-
-roleplay: `<div class="eyebrow">REGRAS GERAIS</div><h1>Regras de Roleplay</h1><p class="lead">Consulte aqui as normas de interpretação de personagens da Diamantina Roleplay.</p><div class="callout">Esta categoria aguarda a inclusão do regulamento oficial aprovado pela administração.</div>`,
-
-safe: `<div class="eyebrow">REGRAS GERAIS</div><h1>Safe Zones</h1><p class="lead">Consulte aqui as regras das áreas protegidas da cidade.</p><div class="callout">Esta categoria aguarda a inclusão do regulamento oficial aprovado pela administração.</div>`,
-
-acoes: `<div class="eyebrow">REGRAS GERAIS</div><h1>Ações e Abordagens</h1><p class="lead">Orientações sobre ações, abordagens e situações de roleplay.</p><div class="callout">Esta categoria aguarda a inclusão do regulamento oficial aprovado pela administração.</div>`,
-
-publicos: `<div class="eyebrow">SERVIÇOS</div><h1>Serviços Públicos</h1><p class="lead">Normas e orientações para os serviços públicos da cidade.</p><div class="callout">Esta categoria aguarda a inclusão do regulamento oficial aprovado pela administração.</div>`,
-
-faccoes: `<div class="eyebrow">SERVIÇOS</div><h1>Organizações</h1><p class="lead">Regras para organizações e grupos da Diamantina.</p><div class="callout">Esta categoria aguarda a inclusão do regulamento oficial aprovado pela administração.</div>`,
-
-suporte: `<div class="eyebrow">SUPORTE</div><h1>Suporte e Denúncias</h1><p class="lead">Utilize os canais oficiais da Diamantina para solicitar ajuda ou encaminhar uma denúncia.</p><div class="callout">Adicione aqui o link oficial do Discord e as orientações de atendimento da administração.</div>`
+ inicio:{group:"BEM-VINDO À DIAMANTINA",title:"Central de Regras",lead:"Bem-vindo à central oficial de regras da Diamantina Roleplay. Consulte as normas, orientações e procedimentos para manter uma experiência de roleplay respeitosa e organizada.",body:`<div class="callout"><strong>⚠️ IMPORTANTE</strong><br>Leia atentamente todas as regras. O desconhecimento do regulamento não elimina a responsabilidade por uma infração. Os textos importados devem ser revisados pela administração antes de serem adotados oficialmente pela Diamantina.</div><h2>Explore o regulamento</h2><p>Use o menu lateral ou a pesquisa para localizar uma categoria ou regra específica.</p>`},
+ basicas:{group:"INÍCIO DO REGULAMENTO",title:"📚 Regras Básicas",lead:"Normas gerais de convivência, segurança e conduta no servidor.",body:`<ol class="rules">
+<li>Qualquer atitude envolvendo calúnia ou difamação para prejudicar jogador ou membro da equipe poderá resultar em advertência e, conforme a gravidade, banimento. São proibidas atitudes discriminatórias, incluindo homofobia, racismo, bullying e discurso de ódio abusivo, desnecessário ou tóxico.</li>
+<li>Não é permitida venda externa. O modelo informado pelo regulamento de origem é de doações com bonificações.</li>
+<li>Apoiar, promover ou ajudar jogadores a obter acesso a programas ilegais, como hacks ou ferramentas que concedam vantagem no jogo, poderá resultar em banimento permanente.</li>
+<li>Ocultar ou esconder informações sobre jogadores punidos que ainda estejam banidos em sua conta original poderá resultar em banimento permanente.</li>
+<li>É proibido transferir veículos e VIPs adquiridos na loja de doações para outro jogador dentro da cidade.</li>
+<li>O comando /ID deve ser utilizado somente para obter o ID necessário para denúncias. O uso para outras finalidades poderá ser enquadrado como Meta Gaming.</li>
+<li>Adultos não podem dirigir veículos infantis; crianças e adolescentes não podem utilizar veículos destinados a adultos.</li>
+<li>Itens e benefícios adquiridos por doação não podem ser compartilhados ou vendidos a outros jogadores. Para presentear alguém, deve ser feita uma doação indicando o ID do presenteado.</li>
+<li>É proibido chamar o SAMU durante uma ação em andamento.</li>
+<li>Membros do hospital ou SAMU não podem reanimar jogadores durante ações em andamento. O descumprimento poderá gerar exoneração.</li>
+<li>Uma vítima pode reconhecer um agressor por roupas, tatuagens e cabelo, mas isso não libera PvP automaticamente. É necessário RP prévio para confirmar a identidade. Não é permitido reconhecer alguém pela voz.</li>
+<li>Durante um assalto, só podem ser levados os itens que a vítima estiver portando. É proibido obrigar a vítima a fazer transferências bancárias ou buscar itens em baús.</li>
+<li>É proibido utilizar hacks, citizens ou modificações de mapa que removam vegetação, noite, água, objetos ou outros elementos para obter vantagem. O regulamento de origem prevê banimento instantâneo para esses recursos.</li>
+<li>É proibido comercializar um item do qual o jogador não seja fornecedor ou fabricante.</li>
+<li>É proibido utilizar roupas que façam menção a qualquer força policial sem autorização.</li>
+<li>É proibido utilizar mods gráficos ou patches que concedam vantagem, como remover vegetação ou objetos do cenário.</li>
+</ol>`},
+ personagem:{group:"INÍCIO DO REGULAMENTO",title:"👤 Regras de Personagem",lead:"Regras sobre slots, personagens, empregos e separação de bens entre personagens.",body:`<ol class="rules">
+<li>Líderes e gerentes de facção em um slot não podem ocupar cargos na polícia ou no jurídico no segundo slot. Comandos e superiores da polícia ou do jurídico também não podem estar vinculados a uma facção no outro slot.</li>
+<li>Líderes e gerentes de facção como emprego primário não podem trabalhar no jurídico como emprego secundário.</li>
+<li>É proibido transferir dinheiro, enviar itens ou utilizar veículos de um slot de personagem para beneficiar outro slot.</li>
+<li>As advertências são aplicadas ao jogador, não somente ao personagem. A infração em qualquer slot pode afetar ambos. O regulamento de origem informa que, após três advertências, ambos os slots são banidos.</li>
+<li>Jogadores com segunda vida ou segundo emprego devem manter a separação entre personagens e não utilizar um para beneficiar o outro.</li>
+<li>O PD de facção é obrigatório conforme a regra de origem: ao morrer para ser retirado da facção, o personagem deve esquecer as informações relacionadas à facção e às pessoas nela. A saída sem PD depende de autorização do 01.</li>
+<li>PD do personagem é a perda definitiva do personagem após uma situação considerada gravíssima.</li>
+<li>Líder de organização, legal ou ilegal, não pode ser setado em outro painel, seja como emprego primário ou secundário.</li>
+</ol>`},
+ punicao:{group:"INÍCIO DO REGULAMENTO",title:"🔴 Sistema de Punição",lead:"Tabela de penalidades reproduzida do regulamento consultado. Confirme os valores e critérios com a administração antes de aplicar na Diamantina.",body:`<h2>Advertências e tempo de prisão</h2><ol class="rules">
+<li>RDM — 800 meses.</li><li>VDM — 800 meses.</li><li>Anti Amor à Vida — 800 meses.</li><li>RP tóxico — 800 meses.</li><li>Combat Logging (CL) — 900 meses.</li><li>Matar em área safe — 1.000 meses.</li><li>Meta Gaming — 800 meses.</li><li>Power Gaming — 500 meses.</li><li>Forçar RP — 500 meses.</li><li>Assaltar fora de horário — 700 meses.</li><li>Invasão em área vermelha sem motivo — 700 meses.</li><li>Loot indevido — 500 meses.</li><li>Ação sem uniforme ou roupa da organização — 800 meses.</li><li>Reanimar jogadores com ações em andamento — 500 meses.</li><li>Persistir em erro após comprovação — 700 meses.</li><li>No Props — até 1.000 meses, conforme o recurso utilizado.</li><li>Outras quebras de regras — equipe staff poderá decidir entre 100 e 500 meses.</li><li>Chamar bombeiros apertando F após morrer em ação ainda em andamento — 300 meses.</li>
+</ol><h2>Banimentos</h2><ul class="rules">
+<li>Cheat — banimento permanente.</li><li>RPF Aimbot — banimento permanente.</li><li>No-Props — o tratamento depende do recurso utilizado; o texto consultado menciona possibilidade de revogação e conversão em advertência in-game.</li><li>Negar pedido de telagem — o texto consultado prevê possibilidade de revisão via procedimento de unban.</li><li>Dark RP — banimento permanente.</li><li>Convidar jogadores para outro servidor, pelo Discord ou in-game — o texto consultado prevê possibilidade de revisão via unban.</li><li>Windows ReviOS ou ISO modificada que interrompa processos — banimento permanente.</li><li>Windows Defender removido em Windows legítimo — desbanimento somente após formatação.</li><li>Exclusão de C:\ no Windows Defender — banimento e exigência de unban e formatação.</li><li>Rastro de cheat expirado há mais de três meses — desbanimento somente após formatação.</li>
+</ul><div class="warning"><strong>⚠️ ATENÇÃO:</strong> Esta tabela é uma transcrição do material consultado e pode conter valores ou procedimentos próprios do servidor de origem. A administração da Diamantina deve validar cada item antes de publicar como regra oficial.</div>`},
+ roleplay:{group:"ROLEPLAY E PERSONAGENS",title:"🎭 Regras de Roleplay",lead:"Princípios de interpretação e conduta durante as situações de roleplay.",body:`<div class="placeholder">O índice público consultado não forneceu uma página completa e específica de regras gerais de Roleplay. Consulte também as páginas de Regras Básicas, Power Gaming, Trash RP, Personagem e Ações de Rua. O conteúdo específico desta categoria precisa ser confirmado ou enviado pela administração.</div>`},
+ powergaming:{group:"ROLEPLAY E PERSONAGENS",title:"⚙️ Power Gaming",lead:"Power Gaming é o abuso da física ou das mecânicas do jogo em situações impossíveis ou irreais na vida real.",body:`<ol class="rules">
+<li>Power Gaming é proibido, com exceções indicadas no texto consultado para saltos e rampas com veículos.</li>
+<li>Em capotamentos, manobras, saltos ou colisões no ar em que o pneu do veículo fure, é obrigatória a parada imediata. Em perseguição, a fuga poderá continuar a pé.</li>
+<li>Apenas caminhonetes, SUVs e motos de trilha são permitidos para subir montanhas e percorrer terrenos irregulares. O texto consultado cita motos policiais, Sanchez, antiManchez e R1200 como exemplos.</li>
+<li>É proibido utilizar veículos intencionalmente para causar danos, girar, capotar ou colidir deliberadamente com outros veículos para obter vantagem. O chamado “bate-bate” é considerado Power Gaming e VDM.</li>
+<li>É proibido utilizar funções de veículos blindados que concedam vantagem indevida em ações.</li>
+<li>O texto consultado também proíbe modificações e funcionalidades como paraquedas, turbo e sistemas de pulo/suspensão que permitam saltos anormais durante ações.</li>
+</ol>`},
+ trash:{group:"ROLEPLAY E PERSONAGENS",title:"🗑️ Trash RP",lead:"Trash RP é descrito como uma interpretação abusiva, humilhante ou destinada a menosprezar outro jogador.",body:`<ol class="rules">
+<li>É proibido afetar pessoas com falas suicidas.</li>
+<li>É proibido divulgar fotos em aplicativos, como Instagram, com a intenção de humilhar alguém.</li>
+<li>Comentários maldosos ou pejorativos em publicações de outras pessoas são proibidos, inclusive no Discord da cidade.</li>
+<li>São proibidos comentários maldosos ou de teor adulto envolvendo crianças que utilizam skins no servidor.</li>
+<li>Falas que induzam ao suicídio poderão resultar em banimento do servidor.</li>
+</ol>`},
+ anoes:{group:"ROLEPLAY E PERSONAGENS",title:"🧍 Regras de Anões",lead:"Categoria prevista no índice do regulamento consultado.",body:`<div class="placeholder">A página específica de Regras de Anões não foi recuperada nos resultados públicos disponíveis nesta consulta. Envie o texto ou a URL direta desta página para que eu possa inserir as regras completas sem inventar conteúdo.</div>`},
+ criancas:{group:"ROLEPLAY E PERSONAGENS",title:"👶 Regras de Crianças",lead:"Normas de interpretação, segurança e conduta para personagens crianças e adolescentes.",body:`<ol class="rules">
+<li>É proibido criança “gadar” adultos.</li>
+<li>A interpretação deve respeitar a capacidade de cada fase, incluindo fala e comportamento. O texto reforça que crianças devem ser interpretadas como inocentes e sem malícia.</li>
+<li>É proibido utilizar palavras, expressões ou frases impróprias para a idade, incluindo palavrões, conteúdo sexual ou linguagem excessivamente culta.</li>
+<li>É proibido dirigir de maneira imprudente.</li>
+<li>É proibido frequentar locais incompatíveis com a idade sem a presença de responsável maior de 18 anos.</li>
+<li>É proibido ingerir bebidas alcoólicas, drogas ou itens destinados a maiores.</li>
+<li>A linguagem e a construção das frases devem ser compatíveis com a idade interpretada.</li>
+<li>É proibido frequentar locais de risco, como favelas em guerra ou áreas próximas a ações e tiroteios.</li>
+<li>É proibido utilizar adrenalina.</li>
+<li>Crianças não podem se locomover em veículos motorizados de duas rodas ou veículos destinados a adultos.</li>
+<li>Crianças e adolescentes devem frequentar a escola por, no mínimo, quatro dias por semana, conforme o texto consultado.</li>
+<li>Crianças não podem portar itens ilegais nem participar de atos ilegais, incluindo portar taser ou algemas.</li>
+<li>Entregar produtos sexuais ou ilegais a crianças poderá gerar advertência conforme a gravidade.</li>
+<li>Falar palavras desrespeitosas perto de uma criança poderá gerar advertência conforme a gravidade.</li>
+<li>Insinuações ou palavras de cunho sexual perto de uma criança são consideradas Dark RP.</li>
+<li>É proibido a criança falar ou insinuar qualquer tipo de ação sexual.</li>
+<li>Adolescentes acima de 14 anos podem trabalhar como jovens aprendizes em empregos legais, como hospital e mecânica, conforme disponibilidade e autorização do jurídico.</li>
+<li>Crianças menores de 14 anos podem trabalhar como jovens aprendizes em empregos legais, como cafeteria e pizzaria, conforme disponibilidade e autorização do jurídico.</li>
+<li>A polícia poderá revistar crianças conforme a gravidade da ocorrência.</li>
+<li>Crianças podem frequentar bares e cassinos, mas não podem consumir álcool nem jogar no cassino, conforme exceção indicada no texto de origem.</li>
+<li>É proibido dirigir veículos que não sejam infantis ou especificamente permitidos pela cidade.</li>
+<li>É proibido matar, roubar ou praticar atos ilegais contra crianças.</li>
+<li>O tempo mínimo como criança indicado no texto consultado é de dez dias.</li>
+<li>Em caso de quebra de regras envolvendo skins, a Staff poderá remover a skin do jogador.</li>
+<li>Adultos não podem utilizar carros infantis “mini”.</li>
+<li>Crianças não podem lootear outros jogadores.</li>
+<li>O sequestro de crianças é permitido somente em caso de guerra entre duas facções, preservando sempre a segurança da criança.</li>
+<li>Ao sair em horário de assalto, a segurança da criança é responsabilidade dos responsáveis; o texto proíbe assaltar enquanto houver criança no local.</li>
+</ol>`},
+ gravidez:{group:"ROLEPLAY E PERSONAGENS",title:"🤰 Regras de Gravidez",lead:"Categoria prevista no índice do regulamento consultado.",body:`<div class="placeholder">A página específica de Regras de Gravidez não foi recuperada nos resultados públicos disponíveis nesta consulta. Envie o texto ou a URL direta desta página para que eu possa inserir as regras completas sem inventar conteúdo.</div>`},
+ safe:{group:"ROLEPLAY E PERSONAGENS",title:"🟩 Área Segura",lead:"Safe zones são locais onde não podem acontecer ações.",body:`<h2>Locais indicados como área segura</h2><ul class="rules"><li>Praça.</li><li>Hospital.</li><li>Mecânicas.</li><li>Restaurantes.</li><li>restaurantes</li><li>Escolinha.</li><li>Pontos turísticos.</li><li>concessionária</li><li>Agência de empregos.</li></ul><ol class="rules"><li>É proibido levar ações para dentro de áreas seguras.</li><li>Ações iniciadas fora da área segura não podem ser finalizadas dentro dela; isso é considerado abuso de área segura.</li><li>O texto consultado permite abordagem policial em área segura quando armas de fogo estiverem à vista. Pessoas mascaradas ou com coldres que aparentem portar armas podem ser abordadas para conversa e procedimento de rotina.</li></ol>`},
+ airdrop:{group:"AÇÕES E EVENTOS",title:"🪂 Regras Air Drop",lead:"Regras para o evento Air Drop e sua área de combate.",body:`<ol class="rules">
+<li>Toda a área marcada no mapa quando o Air Drop for lançado é considerada PvP livre. Ao entrar na área marcada enquanto o evento estiver ativo, o jogador poderá ser abatido automaticamente; o texto de origem informa que RDM é liberado dentro dessa área.</li>
+<li>A polícia não pode ir ao Air Drop/Car Drop sem QRU de disparos. Sem QRU no local, não poderá intervir no evento.</li>
+<li>É permitido utilizar carros blindados no Air Drop.</li>
+<li>A polícia está proibida de pegar itens das caixas do Car Drop. O texto consultado menciona 150 meses de advertência e exoneração como consequência.</li>
+<li>É permitido retornar à ação após morrer no Air Drop. Essa é apresentada como exceção à regra geral, válida somente dentro do evento.</li>
+</ol>`},
+ carroforte:{group:"AÇÕES E EVENTOS",title:"🚚 Regras do Carro-Forte",lead:"Categoria solicitada para o regulamento da cidade.",body:`<div class="placeholder">Não foi localizada uma página específica de regras do Carro-Forte nos resultados públicos recuperados nesta consulta. O conteúdo não foi presumido nem inventado. Envie a URL direta ou o texto desta página para completar esta seção.</div>`},
+ acoes:{group:"AÇÕES E EVENTOS",title:"📕 Ações de Rua",lead:"Regras de assaltos, abordagens, identificação, fugas e conduta durante ações.",body:`<h2>Horário e anúncio de assalto</h2><ol class="rules">
+<li>O texto consultado informa horário de assalto no norte das 00:00 às 14:00. Após esse horário, assaltos ficam proibidos. O assalto sul aparece como temporariamente removido, embora outras ações, como cobrança, sequestro e roubo de veículos, continuem permitidas.</li>
+<li>É obrigatório anunciar de forma clara e em voz alta, utilizando o grito, que se trata de um assalto. Se necessário, o anúncio deve ser repetido para garantir que todos entendam.</li>
+<li>Assaltos e ações iniciados no norte podem ser rotacionados para o sul.</li>
+</ol><h2>Identificação e proteção de jogadores</h2><ol class="rules">
+<li>Facções oficiais devem utilizar identificação durante ações de pista, por meio de pelo menos uma peça de roupa da facção ou mochila personalizada.</li>
+<li>Facções de rua ou equipes que não estejam registradas como facção oficial não precisam seguir essa regra de identificação.</li>
+<li>É proibido roubar jogadores que estejam farmando ou coletando itens relacionados a farm.</li>
+<li>É proibido roubar veículos, itens de farm e itens VIP durante assaltos, independentemente da situação.</li>
+<li>É proibido roubar veículos de jogadores que estejam em área de farm, mesmo que não estejam carregando itens naquele momento.</li>
+<li>Itens VIP e itens de farm não podem ser loteados, mesmo que a vítima reaja.</li>
+<li>Não é necessário haver policiais em serviço para iniciar assaltos.</li>
+<li>Membros do hospital, mecânicas e jurídico não podem ser assaltados.</li>
+</ol><h2>Limites e alianças</h2><ol class="rules">
+<li>O contingente máximo indicado para abordagem de grupo é de dez policiais, distribuídos em até cinco viaturas, duas GTM e uma GRAER. O número só pode ser ultrapassado se o grupo abordado tiver mais de oito pessoas.</li>
+<li>É proibido solicitar QRR de facção aliada que não faça parte da ação. Alianças podem iniciar uma pista juntas; somente nesse caso o QRR poderá ser atendido por ambas.</li>
+<li>É permitida uma aliança entre facções para ações de rua. É proibido aliar-se a quem vende o mesmo produto. O texto consultado menciona possível advertência da cúpula em caso de descumprimento.</li>
+<li>Itens de farm são considerados ilegais a partir de 250 unidades, conforme o texto consultado.</li>
+</ol><h2>Conduta policial e fugas</h2><ol class="rules">
+<li>A abordagem policial é permitida durante todo o dia.</li>
+<li>É proibido atirar de dentro de carros blindados. O veículo pode ser utilizado na pista, mas o jogador deve sair dele para trocar tiros.</li>
+<li>Durante fugas, são permitidas rampagens leves, como rampas e alturas medianas.</li>
+<li>A polícia só poderá atirar contra alguém quando houver risco à vida dos policiais ou de inocentes, Power Gaming ou armas aparentes. Em caso de armas à vista, o texto autoriza Código 5.</li>
+<li>Jogadores desmaiados, mortos ou presos durante uma ação não podem participar da continuação daquele RP.</li>
+<li>É proibido levar ações para áreas safe. O texto consultado prevê multa de 5 milhões ao jogador prejudicado, devolução dos itens perdidos ou advertência.</li>
+<li>Em fugas, corridas ilegais e ATM/caixinha, é proibido utilizar armas de fogo; deve ocorrer fuga limpa.</li>
+<li>O máximo indicado para acompanhar veículos em fuga limpa é de duas viaturas por veículo.</li>
+<li>É proibido usar roupas que façam referência a facção diferente daquela a que o jogador pertence.</li>
+<li>Em rivalidade de facção, bandidos não podem entrar em área vermelha rival, salvo em guerra ou baque devidamente marcado.</li>
+<li>É proibido forçar RP com gestos, provocações ou xingamentos desnecessários para provocar abordagem.</li>
+<li>Se a polícia abandonar a ação (QTA), não deverá ser perseguida.</li>
+<li>A polícia deve fechar o perímetro da ação utilizando o comando F7. Jogadores que entrarem em perímetro policial fechado poderão ser abatidos.</li>
+<li>Se um jogador morrer para a polícia fora de perímetro fechado e sem envolvimento na ação, poderá registrar denúncia por RDM.</li>
+</ol>`},
+ perseguicao:{group:"AÇÕES E EVENTOS",title:"🚘 Regras de Perseguição",lead:"Procedimentos para fugas, colisões, uso do Código 3 e intervenção policial.",body:`<ol class="rules">
+<li>Caso o indivíduo abra fogo contra a polícia, deverá ser neutralizado.</li>
+<li>Se o fugitivo colidir o veículo ou capotar, deverá descer rendido.</li>
+<li>A polícia só deverá abrir fogo contra criminosos quando apresentarem risco à vida de alguém, por exemplo, efetuando disparos contra a corporação ou atropelando um cidadão.</li>
+<li>Após cinco minutos de fuga, a polícia poderá utilizar o Código 3 (tiro no pneu).</li>
+<li>Se o fugitivo passar três vezes por áreas movimentadas, a polícia também poderá utilizar o Código 3.</li>
+<li>O texto consultado menciona como permitido Power Gaming envolvendo subir escadas ou montanhas com veículos baixos; esse ponto deve ser revisado pela administração por poder conflitar com a regra geral de Power Gaming.</li>
+</ol><h2>Condições para autorizar Código 3</h2><ul class="rules">
+<li>Quebrar as regras de fuga limpa.</li><li>Estar armado.</li><li>Receber ajuda de terceiros.</li><li>Reparar o veículo durante a fuga.</li><li>Utilizar rádio para pedir ajuda.</li><li>Atropelar alguém propositalmente.</li><li>Trocar de veículo (P1).</li><li>Capotar o veículo ou cair da moto.</li>
+</ul>`},
+ sequestro:{group:"AÇÕES E EVENTOS",title:"☠️ Regras de Sequestro",lead:"Regras de quantidade, negociação, resgate, proteção do refém e procedimentos de sequestro.",body:`<h2>Quantidades e balanceamento</h2><ul class="rules">
+<li>É necessário, no mínimo, dois sequestradores.</li><li>Deve haver pelo menos um sequestrador a mais do que a quantidade de reféns. Exemplo: um refém exige dois sequestradores; dois reféns exigem três sequestradores; três reféns exigem quatro sequestradores.</li><li>A polícia pode atuar com até quatro integrantes a mais que o número de sequestradores envolvidos.</li><li>O limite indicado é de oito reféns por ação.</li>
+</ul><h2>Negociação e resgate</h2><ul class="rules">
+<li>O texto consultado estabelece negociação de resgate entre R$ 300.000 e R$ 700.000, em dinheiro sujo ou limpo.</li><li>O valor deve ser negociado entre sequestradores e familiares, organização, facção ou polícia, conforme o contexto. Não pode ser imposto sem diálogo.</li><li>É proibido exigir pagamento diretamente da vítima, obrigá-la a entregar o dinheiro que carrega, exigir dinheiro do passaporte ou forçá-la a vender bens pessoais.</li><li>Se a vítima alegar durante o RP que perdeu ou molhou o passaporte, o texto orienta aceitar a interpretação e continuar o RP.</li><li>O local e a quantidade de envolvidos devem ser informados à polícia por chamado.</li><li>A área de negociação passa a ser considerada safe: é proibido matar durante a negociação.</li><li>Se os sequestradores efetuarem disparos durante a negociação, a ação passa a ser combate de rua.</li><li>O prazo máximo entre a voz de sequestro e o chamado à polícia é de dez minutos. Se ultrapassado, o refém deve ser liberado ileso.</li>
+</ul><h2>Proibições e proteção do refém</h2><ul class="rules">
+<li>Todo sequestro deve ter motivo válido dentro do RP; é proibido sequestrar apenas para gerar PvP ou por diversão.</li><li>Médicos, mecânicos e jogadores em rotas de farm não podem ser sequestrados.</li><li>É proibido dar voz de sequestro com menos de dois integrantes no comboio.</li><li>É proibido iniciar sequestro em locais onde já exista outra ação em andamento, como Banco Central ou Nióbio.</li><li>É proibido matar intencionalmente o refém.</li><li>É proibido reanimar ou utilizar adrenalina no refém.</li><li>A integridade física do refém deve ser preservada.</li>
+</ul><h2>Sequestro policial e identificação</h2><ul class="rules">
+<li>A polícia pode realizar sequestro de criminosos para investigação se houver motivo válido no RP e registro de evidências que justifiquem a ação.</li><li>O texto consultado também prevê sequestro em RP de corrupção para extorsão ou obtenção de vantagens ilícitas; se descoberto dentro do jogo, o policial deve ser exonerado e poderá sofrer punições administrativas.</li><li>Quando um policial estiver mascarado, é proibido identificá-lo pela voz ou pelo ID. A identificação deve se basear em pistas visuais e elementos do RP.</li>
+</ul>`},
+ invasao:{group:"AÇÕES E EVENTOS",title:"🏴 Invasão FAC vs FAC",lead:"Motivos válidos, provas, limites e procedimentos para invasões entre facções.",body:`<h2>QRR e motivos válidos</h2><ul class="rules">
+<li>Para invasões ou defesas, as facções podem solicitar apenas um QRR de uma única facção, parceira de pista ou não.</li><li>Motivos indicados para invasão incluem cobranças de dívidas, roubo de veículos ou quebra de acordo comercial, disparos de dentro para fora da base, fuga para dentro da facção para se proteger, desrespeito direto à liderança, pichações, xingamentos direcionados à liderança, sequestro de líderes, filhos de líderes, sub-líderes ou gerentes gerais, uso de roupas exclusivas de outra facção e quebra comprovada de tratado ou aliança.</li><li>A facção que iniciar a invasão deve possuir provas do motivo alegado.</li><li>É obrigatório haver RP prévio para tentar resolver o problema, salvo situações emergenciais claramente justificadas.</li><li>Os líderes devem estar cientes e autorizar a ação.</li><li>Não é permitido invadir sozinho ou em grupo muito pequeno.</li>
+</ul><h2>Durante a invasão</h2><ul class="rules">
+<li>É proibido invadir sem motivo real ou apenas para iniciar PvP.</li><li>Nenhum integrante pode sair da base e retornar ao combate durante a invasão.</li><li>Quem for abatido deverá retornar pelo hospital, respeitando o tempo de espera e as regras de Anti Amor à Vida.</li><li>Retornar à base durante a invasão poderá ser considerado Anti Amor à Vida, com penalidade indicada no texto de origem de até 800 meses. A regra se aplica a atacantes e defensores.</li><li>A facção invadida pode abrir ticket solicitando explicações e provas da invasão.</li><li>A falta de provas pode resultar em DVFAC, advertências e outras punições administrativas.</li>
+</ul><h2>Limites e prazos</h2><ul class="rules">
+<li>Cada facção só poderá invadir a mesma facção uma vez por dia.</li><li>O limite indicado é de duas invasões por dia, independentemente dos alvos.</li><li>A invasão deve se basear em motivo ocorrido nas últimas 24 horas.</li><li>Após 24 horas, o conflito deverá ser resolvido por RP diplomático ou ticket com a Cúpula, e não por ataque direto.</li>
+</ul>`},
+ baque:{group:"AÇÕES E EVENTOS",title:"☠️ Regras de Baque",lead:"Regras de ataque surpresa, defesa, revides, anotações e tomada de baú.",body:`<ol class="rules">
+<li>Para baquear uma facção rival deve existir motivo aparente. O texto consultado informa que baque sem motivo pode deixar a facção inativa por 12 horas.</li>
+<li>O baque é um ataque surpresa. Não são permitidas alianças, inclusive utilizando roupa de outra favela.</li>
+<li>O texto de origem permite reunir cinco pessoas da favela, sem limite total indicado, para atacar outra favela sem aviso prévio.</li>
+<li>A facção que receber o baque terá 48 horas para revidar. Se não revidar, poderá perder o domínio do baú para os rivais.</li>
+<li>Para validar o baque, devem existir pelo menos cinco pessoas no local invadido.</li>
+<li>Qualquer tipo de armamento é permitido no baque, inclusive no sul, conforme o texto consultado.</li>
+<li>Se cada facção vencer uma vez, ocorre empate e o baque é anulado; nenhum lado fica com o baú adversário.</li>
+<li>O texto consultado contém regras específicas para atuação policial em favelas, incluindo limite de entrada em uma favela por dia e possibilidade de entrada quando criminosos fogem para dentro dela.</li>
+<li>As trocas de tiros devem ocorrer dentro das favelas. Os baques devem acontecer pelas ruas internas, sendo proibido contornar morros, montanhas ou áreas externas.</li>
+<li>É proibido dar baque na mesma favela mais de uma vez por dia. O texto também estabelece espera de três dias para subir novamente se não houver revide.</li>
+<li>Para saquear envolvidos mortos no baque, não é necessário ter matado todos.</li>
+<li>Após sair da favela que recebeu o baque, os membros atacantes só poderão retornar depois que a outra favela tiver revidado.</li>
+<li>A facção que deu o baque só poderá retornar à sua favela após sinalizar no canal “notificar-baque” do Discord.</li>
+<li>A anotação do baque só pode ser feita depois do encerramento da ação.</li>
+<li>Não são permitidas alianças em baques. O texto permite alianças somente em operação policial.</li>
+<li>É proibido utilizar carros de barricada nas entradas das favelas.</li>
+<li>Após morrer em um baque, o jogador deve aguardar a notificação da facção que realizou o ataque para retornar à favela.</li>
+<li>Se uma facção cometer erro e não revidar, a facção que pretende tomar o baú tem até um dia de tolerância para abrir ticket solicitando a tomada.</li>
+<li>Anotações editadas não são válidas. Correções devem ser feitas dentro do prazo de dez minutos, apagando e enviando corretamente.</li>
+<li>Notificações de tomada de baú vencida devem informar claramente a facção que tomou o baú da rival. Notificações de tomada perdida devem seguir o formato de anotação de baque.</li>
+<li>As tomadas de baú ou assuntos do ilegal devem ser avaliados no Discord do ilegal, conforme a orientação do texto de origem.</li>
+<li>Após o fim do baque e a saída da favela, há dez minutos para anotar a ação; o descumprimento poderá gerar advertência de facção.</li>
+<li>É proibido realizar baque sem uniforme da facção.</li>
+<li>É proibido atirar de dentro para fora ou de fora para dentro durante baques.</li>
+<li>O texto consultado informa prazo de três dias para validade da tomada de baú e horário de tomada entre 19h e 23h.</li>
+<li>É permitido apenas um helicóptero por favela. Se quebrar ou ficar inutilizado, é proibido consertar e retornar à ação.</li>
+<li>Granadas são permitidas somente em baques e incursões.</li>
+<li>Se o baque começar e alguém sair do perímetro, o texto permite abater esse jogador fora do perímetro.</li>
+<li>Advertências de facção dependem das condições de setagem de liderança e participação descritas no texto de origem.</li>
+<li>O texto consultado limita o uso de bind ao CTRL direito.</li>
+</ol>`},
+ guerra:{group:"AÇÕES E EVENTOS",title:"🚨 Guerras (Facção x Facção)",lead:"Regras de guerra, área vermelha, duração, alianças e motivos aceitos.",body:`<ol class="rules">
+<li>Durante a guerra, uma área vermelha será aplicada no mapa pela prefeitura. Dentro dela, somente a troca de tiros entre as duas facções em guerra é permitida; a polícia não recebe QRU dentro da área.</li>
+<li>Sequestros e torturas poderão ocorrer fora da área vermelha. Nenhuma outra facção poderá intervir durante o conflito.</li>
+<li>Todas as guerras devem ser aprovadas pelos líderes do ilegal por ticket no Discord.</li>
+<li>O texto consultado estabelece duração de 12 horas. Durante esse período, RDM entre as facções envolvidas é liberado. Após o prazo, voltam a valer as regras normais.</li>
+<li>Durante a guerra, é proibido invadir a favela rival ou marcar entradas e saídas de QG/favelas.</li>
+<li>É proibido reconhecer jogadores mascarados que não estejam com mochilas e roupas da facção rival. Se estiver mascarado, mas uniformizado, o jogador poderá ser reconhecido pela facção rival.</li>
+<li>Áreas safe, favelas e QG devem ser evitados como locais de troca de tiros; o conflito deve ocorrer na pista.</li>
+<li>O texto consultado libera sequestro, RDM, tortura e determinadas ações de RP durante a guerra, conforme os limites descritos na própria regra.</li>
+<li>É permitida uma aliança por lado. A facção aliada deve utilizar o uniforme completo ou a mochila da facção que a convidou durante as 12 horas, sem utilizar seu próprio uniforme ou mochila.</li>
+</ol><h2>Motivos plausíveis indicados</h2><ul class="rules"><li>Quebra de regras de baque.</li><li>Fugir para área safe, organização ou facção durante uma ação.</li><li>Flaming, varrer corpo morto, xingar, cuspir ou utilizar emotes em corpos mortos.</li><li>Atirar de dentro de blindado contra outra facção ou organização.</li><li>Sequestro de líderes de facções.</li><li>Copybait, quando comprovado.</li></ul>`},
+ dominacao:{group:"AÇÕES E EVENTOS",title:"🔫 Regras de Dominação",lead:"Regras para participação, áreas marcadas, intervenção policial e retorno à área.",body:`<ol class="rules">
+<li>É proibido realizar a ação em conjunto com membros de outras facções, organizações ou jogadores sem setagem.</li><li>A facção que dominar uma área receberá o farm em dobro, conforme o texto consultado.</li><li>As áreas com ícone vermelho e nome de dominação no mapa são consideradas áreas vermelhas somente durante a dominação.</li><li>A polícia não pode interferir na dominação nem atender QRUs de tiros dentro das áreas marcadas durante o evento.</li><li>Não é necessário haver policiais em patrulhamento (/ptra) para iniciar uma dominação.</li><li>É permitido lootear todos os envolvidos na ação a qualquer momento.</li><li>É proibido utilizar bugs ou animações para obter vantagem durante a ação.</li><li>Somente a facção ou organização correspondente ao tipo de dominação pode participar. Exemplo do texto: facção de drogas não pode interferir em dominação de munição.</li><li>Após morrer, o jogador só poderá pisar novamente na área de dominação depois de uma hora.</li></ol>`},
+ publicos:{group:"SERVIÇOS E ORGANIZAÇÕES",title:"🏥 Serviços Públicos",lead:"Normas gerais para atuação dos serviços públicos.",body:`<div class="placeholder">O material recuperado contém regras pontuais para hospital, SAMU, mecânicos, médicos e polícia em outras categorias, mas não forneceu uma página integral de Serviços Públicos. Consulte as seções Regras Básicas, Empregos Legais, Ações de Rua e Policiais.</div>`},
+ empregos:{group:"SERVIÇOS E ORGANIZAÇÕES",title:"💼 Regras de Empregos Legais",lead:"Conduta, utilização de veículos, uniformes e atuação em empregos legais.",body:`<ol class="rules">
+<li>É estritamente proibido cometer crimes em locais de empregos legais ou durante a utilização do espaço do emprego.</li>
+<li>É proibido utilizar veículos de empregos legais para atividades fora da função correspondente.</li>
+<li>É proibido portar itens ilegais utilizando veículo de emprego legal.</li>
+<li>É proibido utilizar uniforme de emprego legal para realizar ações ilegais.</li>
+<li>É proibido roubar ou furtar veículos, pessoas ou itens de porta-malas na área de qualquer emprego legal, mesmo que o veículo esteja destrancado.</li>
+<li>Uber pode ser utilizado normalmente, pois não utiliza veículo exclusivo do emprego.</li>
+<li>Mecânicos e médicos podem exercer funções ilegais quando o toggle estiver desligado, conforme exemplos do texto consultado. Com o toggle ligado, é proibido portar itens ilegais ou cometer atos ilegais.</li>
+<li>Mecânicos e médicos em atendimento externo após ação de rua não podem ser abatidos durante ou após o atendimento. O texto consultado prevê possível punição por RDM.</li>
+<li>Médicos devem utilizar roupa e identificação/uniforme e somente atender feridos após verificar que a ação no local foi encerrada.</li>
+</ol>`},
+ policiais:{group:"SERVIÇOS E ORGANIZAÇÕES",title:"🚨 Policiais",lead:"Regras de recrutamento, patrulhamento, abordagens, investigações e incursões.",body:`<ol class="rules">
+<li>O recrutamento para a polícia deve ocorrer somente na presença de superiores responsáveis.</li>
+<li>Policial à paisana não pode acompanhar ocorrências pelo GPS, permanecer no rádio ou solicitar QTH a policiais em serviço. O texto consultado prevê exceção para polícia investigativa e contato como cidadão.</li>
+<li>Policial à paisana não pode abordar, prender, responder QTH de tiros, acompanhar GPS ou atender ocorrências.</li>
+<li>A polícia investigativa pode utilizar recurso junto à prefeitura para solicitar quebra de sigilo bancário em investigações.</li>
+<li>Todas as prisões devem ser realizadas na delegacia da polícia.</li>
+<li>Durante blitz, se o indivíduo se recusar a reduzir a velocidade, o texto consultado autoriza a polícia a atirar.</li>
+<li>A revista em mulheres deve ser feita por policial feminina. Na ausência de efetivo feminino, o texto descreve procedimento alternativo de animação “caixinha”.</li>
+<li>Somente a polícia investigativa pode utilizar informações compartilhadas na deep web e /ilegal para investigação.</li>
+<li>Antes de emitir mandado, as corporações precisam de aval do cargo responsável pela polícia.</li>
+<li>Policiais devem priorizar ações marcadas e sinalizadas no mapa.</li>
+<li>Invasões policiais exigem mandado formado, exceto quando, durante perseguição, o jogador entrar na facção ou disparar contra a guarnição.</li>
+<li>Policiais, mesmo em menor número, podem intervir em ações de rua facção contra facção para pacificar a área contra criminosos armados.</li>
+<li>Policiais investigativos não podem portar armas de grande porte durante investigação nem andar armados sob o pretexto de investigar. O texto limita o porte a policiais em patrulhamento, fardados e em viaturas.</li>
+<li>Policiais em suas bases devem gerar RP antes de abrir Código 3. É proibido atirar apenas nos pneus de quem passa sem contexto de blitz real.</li>
+<li>Em fuga para dentro de favela, se houver quatro ou mais policiais na perseguição, a ação poderá continuar dentro da favela sem envolver pessoas novas. Abater inocentes poderá ser considerado RDM.</li>
+<li>GTM pode dar voz de parada com dois policiais, respeitando Anti Amor à Vida.</li>
+<li>Helicópteros policiais devem utilizar /PM como anúncio de parada aérea a helicópteros suspeitos.</li>
+<li>Helicópteros policiais não podem dar voz de parada a veículos que não sejam aéreos ou aquáticos.</li>
+</ol>`},
+ incursao:{group:"SERVIÇOS E ORGANIZAÇÕES",title:"🏴 Regras de Incursão",lead:"Condições, documentação, efetivo e procedimentos para incursões policiais.",body:`<ol class="rules">
+<li>R.O. (Ronda Ostensiva) é uma patrulha de reconhecimento que também busca inibir crimes de tráfico e atividades semelhantes. Incursão é a entrada da polícia em favela ou organização para neutralizar um grupo.</li>
+<li>É obrigatório possuir motivos válidos e provas para iniciar uma incursão, permitindo comprovar a legitimidade da ação. O texto prevê exceção quando uma R.O. se transforma em incursão.</li>
+<li>O loot de policiais envolvidos é liberado após a finalização da ação, exceto quando uma R.O. se transforma em incursão.</li>
+<li>Os integrantes da favela não podem guardar seus pertences após o início da incursão.</li>
+<li>É permitida no máximo uma incursão por semana.</li>
+<li>A incursão pode durar no máximo três horas. Ao atingir o limite, o lado com maior quantidade será considerado vencedor.</li>
+<li>Durante R.O., incursão e pacificação, é proibido utilizar binds de animações como deitar ou dormir para obter vantagem.</li>
+<li>Durante a incursão, a polícia será sempre o lado que avança, por entrar no local para neutralizar o grupo.</li>
+</ol><h2>Documentos e efetivo indicados</h2><ul class="rules">
+<li>Para aprovação do inquérito: rota de farm, itens fabricados, localização da facção, fotos dos cargos 01, 02, 03 e gerentes, IDs se disponíveis, localização dos baús de líder e membros, vídeo comprovando o que é vendido, uniforme e rádio da facção.</li>
+<li>Polícia: mínimo de 30 e máximo de 60 integrantes.</li>
+<li>Criminosos: mínimo de 20 e máximo de 40 integrantes.</li>
+<li>Polícia: dois helicópteros, um com atiradores e outro com comandos, que serão os últimos a descer em caso de vitória policial.</li>
+<li>Facção: somente um helicóptero permitido.</li>
+<li>É permitido à facção aliar-se a somente mais uma organização ilegal. Aliança com mais de uma poderá gerar advertência após a incursão.</li>
+</ul>`},
+ faccoes:{group:"SERVIÇOS E ORGANIZAÇÕES",title:"🏢 Organizações",lead:"Regras gerais para facções, organizações, liderança e participação em ações.",body:`<div class="placeholder">As regras de organizações e facções aparecem distribuídas em páginas específicas, como Regras de Personagem, Baque, Guerra, Invasão FAC vs FAC, Dominação, Ações de Rua e Incursão. O índice recuperado não forneceu uma única página integral de “Organizações”. Consulte essas categorias para ver os procedimentos aplicáveis.</div>`},
+ aplicativos:{group:"SERVIÇOS E ORGANIZAÇÕES",title:"📱 Aplicativos e Chamados",lead:"Os aplicativos e canais de comunicação devem ser utilizados com respeito e dentro da proposta de roleplay.",body:`<ol class="rules">
+<li>É proibida a criação de contas falsas, com exceção indicada para Instagram no texto consultado.</li>
+<li>São proibidas postagens que envolvam pessoas reais ou contenham conteúdo externo e explícito.</li>
+<li>Não é permitido discurso de ódio nos aplicativos do celular nem no THOR.</li>
+<li>Durante negociações, não poderá ser iniciada uma ação; o texto considera isso bait.</li>
+<li>É proibido fazer chamados irregulares ou desrespeitosos para polícia, médicos ou outros serviços públicos.</li>
+<li>Não é permitido reconhecimento entre usuários do THOR.</li>
+<li>É proibido chantagear, ameaçar ou obrigar alguém a divulgar seu usuário no THOR.</li>
+<li>Em caso de Dark RP, deve ser aberto imediatamente um chamado para a prefeitura.</li>
+<li>Evite chamados desnecessários para a prefeitura.</li>
+<li>Todos os chamados devem conter descrição da situação ou problema.</li>
+<li>Chamados vagos como “Me ajude”, “Socorro”, “Vem cá lindo”, “Preciso conversar com você” ou “ADM quando der vem aqui” poderão ser ignorados.</li>
+</ol>`},
+ suporte:{group:"ATENDIMENTO",title:"🛟 Suporte e Denúncias",lead:"Utilize os canais oficiais da Diamantina para solicitar ajuda ou encaminhar uma denúncia.",body:`<div class="placeholder">Adicione aqui o link oficial do Discord, o canal de tickets e as orientações de atendimento da administração da Diamantina.</div>`}
 };
 
-function page(name,el){
-document.getElementById('content').innerHTML=pages[name]||pages.inicio;
-document.querySelectorAll('.nav a').forEach(a=>a.classList.remove('active'));
-if(el)el.classList.add('active');
-document.querySelector('.sidebar').classList.remove('open');
-history.replaceState(null,'','#'+name);
-window.scrollTo(0,0);
+function placeholder(message){return `<div class="placeholder">📝 <strong>Conteúdo pendente</strong><br>${message}</div>`}
+let currentPage="inicio";
+function buildMenu(){
+ const nav=document.getElementById("navigation");nav.innerHTML="";
+ menuGroups.forEach(group=>{
+  const heading=document.createElement("div");heading.className="group";heading.textContent=group.label;nav.appendChild(heading);
+  group.items.forEach(([id,label])=>{
+   const a=document.createElement("a");a.href="#"+id;a.dataset.page=id;
+   a.innerHTML=`<span class="nav-num">${String(Object.keys(pages).indexOf(id)+1).padStart(2,"0")}</span><span>${label}</span>`;
+   a.addEventListener("click",e=>{e.preventDefault();showPage(id)});nav.appendChild(a);
+  });
+ });
 }
-
-document.getElementById('year').textContent=new Date().getFullYear();
-page(location.hash.replace('#','')||'inicio');
+function showPage(id){
+ if(!pages[id])id="inicio";currentPage=id;
+ const data=pages[id],article=document.getElementById("content");
+ article.innerHTML=`<div class="eyebrow">${data.group}</div><h1>${data.title}</h1><p class="lead">${data.lead}</p>${data.body}`;
+ document.getElementById("breadcrumb").textContent="Diamantina / "+data.group+" / "+data.title;
+ document.querySelectorAll(".nav a").forEach(a=>a.classList.toggle("active",a.dataset.page===id));
+ document.getElementById("searchResults").classList.remove("show");
+ document.getElementById("searchInput").value="";
+ document.getElementById("searchCount").textContent="";
+ history.replaceState(null,"","#"+id);toggleMenu(false);
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+function toggleMenu(force){
+ const side=document.getElementById("sidebar"),back=document.getElementById("backdrop");
+ const open=typeof force==="boolean"?force:!side.classList.contains("open");
+ side.classList.toggle("open",open);back.classList.toggle("show",open);
+}
+function searchableText(data){const box=document.createElement("div");box.innerHTML=`${data.title} ${data.group} ${data.lead} ${data.body}`;return box.textContent.toLocaleLowerCase("pt-BR")}
+function runSearch(){
+ const q=document.getElementById("searchInput").value.trim().toLocaleLowerCase("pt-BR");
+ const results=document.getElementById("searchResults"),count=document.getElementById("searchCount");
+ if(!q){results.classList.remove("show");count.textContent="";return}
+ const matches=Object.entries(pages).filter(([id,data])=>searchableText(data).includes(q));
+ count.textContent=matches.length+" resultado(s)";
+ results.innerHTML=`<div class="search-results-head">RESULTADOS DA PESQUISA</div>`;
+ if(!matches.length){results.innerHTML+=`<div class="no-results">Nenhuma regra encontrada para “${escapeHtml(q)}”. Tente outro termo.</div>`}
+ else matches.forEach(([id,data])=>{
+  const text=data.lead.replace(/\s+/g," ").slice(0,145);
+  const item=document.createElement("a");item.className="result-item";item.href="#"+id;
+  item.innerHTML=`<strong>${escapeHtml(data.title)}</strong><span>${escapeHtml(data.group)} · ${escapeHtml(text)}</span>`;
+  item.addEventListener("click",e=>{e.preventDefault();showPage(id)});results.appendChild(item);
+ });
+ results.classList.add("show");
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+async function copyCurrentPage(){
+ const data=pages[currentPage],box=document.createElement("div");box.innerHTML=data.body;
+ const text=[data.title,data.lead,box.innerText].filter(Boolean).join("\n\n");
+ const btn=document.getElementById("copyBtn");
+ try{await navigator.clipboard.writeText(text)}catch(e){
+  const area=document.createElement("textarea");area.value=text;document.body.appendChild(area);area.select();document.execCommand("copy");area.remove();
+ }
+ btn.textContent="✓  Copiado!";btn.classList.add("copied");setTimeout(()=>{btn.innerHTML="▣ &nbsp; Copiar conteúdo";btn.classList.remove("copied")},1800);
+}
+function setTheme(light){
+ document.documentElement.classList.toggle("light",light);
+ document.getElementById("themeBtn").textContent=light?"☾":"☼";
+ try{localStorage.setItem("diamantina-theme",light?"light":"dark")}catch(e){}
+}
+document.getElementById("themeBtn").addEventListener("click",()=>setTheme(!document.documentElement.classList.contains("light")));
+document.getElementById("searchInput").addEventListener("input",runSearch);
+document.getElementById("searchInput").addEventListener("keydown",e=>{if(e.key==="Escape"){e.target.value="";runSearch()}});
+document.getElementById("year").textContent=new Date().getFullYear();
+buildMenu();
+let initial=location.hash.slice(1);showPage(pages[initial]?initial:"inicio");
+try{setTheme(localStorage.getItem("diamantina-theme")==="light")}catch(e){}
 </script>
 </body>
 </html>
