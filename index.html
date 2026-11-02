@@ -20,7 +20,13 @@
 body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif}
 .sidebar{position:fixed;left:0;top:0;bottom:0;width:275px;background:var(--sidebar);border-right:1px solid var(--line);padding:25px 17px;overflow-y:auto;z-index:5}
 .brand{display:flex;align-items:center;gap:12px;padding:5px 8px 30px}
-.logo{width:43px;height:43px;background:linear-gradient(135deg,#65c4ff,#1266c0);border-radius:12px;display:grid;place-items:center;font-size:25px;font-weight:800}
+.logo {
+    width: 85px;
+    height: 65px;
+    object-fit: contain;
+    background: transparent;
+    border-radius: 0;
+}
 .brand strong{display:block;font-size:14px;letter-spacing:1px}
 .brand small{color:var(--muted);font-size:9px;letter-spacing:2px}
 .label{font-size:10px;letter-spacing:2px;color:#71849e;font-weight:800;padding:12px}
@@ -69,7 +75,7 @@ header{padding-left:65px}
 
 <aside class="sidebar">
 <div class="brand">
-<div class="logo">D</div>
+<img src="./diamantina-logo.png" class="logo" alt="Diamantina Roleplay">
 <div><strong>DIAMANTINA</strong><small>ROLEPLAY · REGULAMENTO</small></div>
 </div>
 
