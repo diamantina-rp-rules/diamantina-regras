@@ -9,14 +9,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 :root{
   color-scheme:dark;
-  --bg:#0a111d;--sidebar:#0d1726;--surface:#111f31;--surface2:#15263b;
-  --line:#263a53;--blue:#1689e8;--blue2:#42aaff;--text:#edf5ff;
+  --bg:#202223;--sidebar:#1d1f20;--surface:#222526;--surface2:#2b2e30;
+  --line:#34393d;--blue:#3269d9;--blue2:#55a0ff;--text:#f3f5f7;
   --muted:#9aacc3;--body:#c4d0df;--shadow:0 14px 40px rgba(0,0,0,.18);
 }
 :root.light{
   color-scheme:light;
-  --bg:#f3f6fa;--sidebar:#fff;--surface:#fff;--surface2:#edf4fb;
-  --line:#dce5ef;--blue:#0878d1;--blue2:#0878d1;--text:#17283b;
+  --bg:#f3f5f8;--sidebar:#fff;--surface:#fff;--surface2:#edf2f8;
+  --line:#dce3ec;--blue:#3269d9;--blue2:#3269d9;--text:#17283b;
   --muted:#66788d;--body:#40536a;--shadow:0 12px 32px rgba(22,48,77,.08);
 }
 *{box-sizing:border-box}
@@ -33,10 +33,10 @@ button{cursor:pointer}
 .nav a{display:flex;align-items:center;gap:9px;color:var(--body);text-decoration:none;padding:9px 11px;margin:2px 0;border-radius:8px;font-size:12px;line-height:1.4;cursor:pointer;transition:.15s}
 .nav a:hover,.nav a.active{background:var(--surface2);color:var(--text)}
 .nav a.active{box-shadow:inset 3px 0 var(--blue2)}
-.nav a .nav-num{font-size:9px;color:var(--muted);min-width:18px}
+.nav a .nav-num{font-size:15px;min-width:23px;text-align:center}
 .footer-side{margin-top:24px;border-top:1px solid var(--line);padding:16px 10px;color:var(--muted);font-size:10px;line-height:1.8}
 main{margin-left:286px;min-height:100vh;display:flex;flex-direction:column}
-.topbar{height:72px;position:sticky;top:0;z-index:10;background:linear-gradient(110deg,#0868b7,#168fe8);display:flex;align-items:center;gap:18px;padding:0 clamp(18px,4vw,54px);box-shadow:0 5px 22px rgba(0,70,130,.2)}
+.topbar{height:54px;position:sticky;top:0;z-index:10;background:#3269d9;display:flex;align-items:center;gap:18px;padding:0 clamp(18px,4vw,54px);box-shadow:0 5px 22px rgba(0,70,130,.2)}
 .top-brand{display:flex;align-items:center;gap:10px;color:white;font-size:12px;font-weight:800;letter-spacing:1px;white-space:nowrap}
 .top-brand img{width:37px;height:37px;object-fit:contain}
 .search-wrap{position:relative;flex:1;max-width:570px;margin-left:auto}
@@ -49,8 +49,8 @@ main{margin-left:286px;min-height:100vh;display:flex;flex-direction:column}
 .icon-btn{width:39px;height:39px;border:1px solid rgba(255,255,255,.3);border-radius:9px;background:rgba(0,35,75,.2);color:white;font-size:17px}
 .icon-btn:hover{background:rgba(0,35,75,.38)}
 .mobile-menu{display:none}
-.content{width:min(940px,calc(100% - 64px));margin:55px auto 70px;flex:1}
-.breadcrumb{color:var(--muted);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:16px}
+.content{width:min(1120px,calc(100% - 64px));margin:0 auto 70px;flex:1}
+.hero{height:270px;margin:0 0 30px;border-radius:0 0 12px 12px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;background:radial-gradient(ellipse at 20% 20%,rgba(0,225,232,.65),transparent 35%),radial-gradient(ellipse at 80% 80%,rgba(0,154,255,.5),transparent 40%),linear-gradient(125deg,#061e2c,#092c36 45%,#063c49);}\n.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 28px,rgba(70,245,245,.08) 29px 31px),radial-gradient(circle at 50% 50%,transparent 0 28%,rgba(0,0,0,.3) 70%);}\n.hero-inner{position:relative;z-index:1;color:#fff;text-shadow:0 4px 24px rgba(0,0,0,.35)}\n.hero-title{font-size:clamp(48px,8vw,100px);font-weight:800;letter-spacing:-5px;line-height:.95}\n.hero-sub{font-size:12px;font-weight:800;letter-spacing:12px;margin-top:8px}\n.breadcrumb{color:var(--muted);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:16px}
 .eyebrow{color:var(--blue2);font-size:10px;letter-spacing:2px;font-weight:800}
 h1{font-size:clamp(30px,4.5vw,48px);letter-spacing:-1.8px;line-height:1.13;margin:12px 0 18px}
 h2{font-size:20px;margin:34px 0 12px;letter-spacing:-.4px}
@@ -87,7 +87,7 @@ mark{background:rgba(22,137,232,.22);color:inherit;border-radius:2px}
 footer{text-align:center;border-top:1px solid var(--line);padding:22px;color:var(--muted);font-size:10px}
 .backdrop{display:none}
 @media(max-width:900px){.sidebar{width:275px;transform:translateX(-100%)}.sidebar.open{transform:translateX(0)}main{margin-left:0}.mobile-menu{display:block}.topbar{padding-left:15px}.backdrop.show{display:block;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:15}.content{margin:38px auto 55px;width:min(900px,calc(100% - 38px))}}
-@media(max-width:560px){.topbar{height:auto;min-height:68px;flex-wrap:wrap;padding:10px 12px;gap:9px}.top-brand{font-size:10px}.top-brand img{width:31px;height:31px}.search-wrap{order:3;flex-basis:100%;max-width:none}.top-actions{margin-left:auto}.icon-btn{width:35px;height:35px}.content{margin-top:30px}.tiles{grid-template-columns:1fr}.page-tools{align-items:flex-start;flex-direction:column}.lead{font-size:14px}h1{font-size:34px}}
+@media(max-width:560px){.hero{height:190px;margin-bottom:22px}.hero-title{letter-spacing:-2px}.hero-sub{letter-spacing:7px}.topbar{height:auto;min-height:68px;flex-wrap:wrap;padding:10px 12px;gap:9px}.top-brand{font-size:10px}.top-brand img{width:31px;height:31px}.search-wrap{order:3;flex-basis:100%;max-width:none}.top-actions{margin-left:auto}.icon-btn{width:35px;height:35px}.content{margin-top:30px}.tiles{grid-template-columns:1fr}.page-tools{align-items:flex-start;flex-direction:column}.lead{font-size:14px}h1{font-size:34px}}
 </style>
 </head>
 <body>
@@ -399,7 +399,7 @@ function buildMenu(){
   const heading=document.createElement("div");heading.className="group";heading.textContent=group.label;nav.appendChild(heading);
   group.items.forEach(([id,label])=>{
    const a=document.createElement("a");a.href="#"+id;a.dataset.page=id;
-   a.innerHTML=`<span class="nav-num">${String(Object.keys(pages).indexOf(id)+1).padStart(2,"0")}</span><span>${label}</span>`;
+   a.innerHTML=`<span class="nav-num">${pageIcons[id]||"📌"}</span><span>${label}</span>`;
    a.addEventListener("click",e=>{e.preventDefault();showPage(id)});nav.appendChild(a);
   });
  });
