@@ -34,6 +34,14 @@ button{cursor:pointer}
 .nav a:hover,.nav a.active{background:var(--surface2);color:var(--text)}
 .nav a.active{box-shadow:inset 3px 0 var(--blue2)}
 .nav a .nav-num{font-size:15px;min-width:23px;text-align:center}
+.nav-toggle{width:100%;border:0;text-align:left;background:transparent;font-family:inherit}
+.nav-toggle .nav-chevron{margin-left:auto;color:var(--muted);font-size:15px}
+.nav-children{display:none;margin:0 0 4px 19px;padding-left:10px;border-left:1px solid var(--line)}
+.nav-parent.expanded .nav-children{display:block}
+.nav-children a{padding:8px 8px;font-size:12px}
+.nav-children a.active{color:var(--blue2);background:transparent;box-shadow:none}
+.nav-parent.expanded>.nav-toggle{background:var(--surface2);color:var(--blue2)}
+
 .footer-side{margin-top:24px;border-top:1px solid var(--line);padding:16px 10px;color:var(--muted);font-size:10px;line-height:1.8}
 main{margin-left:300px;min-height:100vh;display:flex;flex-direction:column}
 .topbar{height:54px;position:sticky;top:0;z-index:10;background:#3269d9;display:flex;align-items:center;gap:18px;padding:0 clamp(18px,4vw,54px);box-shadow:0 5px 22px rgba(0,70,130,.2)}
@@ -49,12 +57,13 @@ main{margin-left:300px;min-height:100vh;display:flex;flex-direction:column}
 .icon-btn{width:39px;height:39px;border:1px solid rgba(255,255,255,.3);border-radius:9px;background:rgba(0,35,75,.2);color:white;font-size:17px}
 .icon-btn:hover{background:rgba(0,35,75,.38)}
 .mobile-menu{display:none}
-.content{width:min(1120px,calc(100% - 48px));margin:0 auto 70px;flex:1}
-.hero{height:270px;margin:0 0 30px;border-radius:0 0 12px 12px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;background:radial-gradient(ellipse at 20% 20%,rgba(0,225,232,.65),transparent 35%),radial-gradient(ellipse at 80% 80%,rgba(0,154,255,.5),transparent 40%),linear-gradient(125deg,#061e2c,#092c36 45%,#063c49);}
+.content{width:min(760px,calc(100% - 48px));margin:0 auto 70px;flex:1}
+.hero{width:calc(100% + 360px);max-width:calc(100vw - 300px);height:270px;margin:0 0 30px;border-radius:0 0 12px 12px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;background:radial-gradient(ellipse at 20% 20%,rgba(0,225,232,.65),transparent 35%),radial-gradient(ellipse at 80% 80%,rgba(0,154,255,.5),transparent 40%),linear-gradient(125deg,#061e2c,#092c36 45%,#063c49);}
 .hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 28px,rgba(70,245,245,.08) 29px 31px),radial-gradient(circle at 50% 50%,transparent 0 28%,rgba(0,0,0,.3) 70%);}
 .hero-inner{position:relative;z-index:1;color:#fff;text-shadow:0 4px 24px rgba(0,0,0,.35)}
 .hero-title{font-size:clamp(48px,8vw,100px);font-weight:800;letter-spacing:-5px;line-height:.95}
-.hero-sub{font-size:12px;font-weight:800;letter-spacing:12px;margin-top:8px}\n.breadcrumb{color:var(--muted);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:16px}
+.hero-sub{font-size:12px;font-weight:800;letter-spacing:12px;margin-top:8px}
+.breadcrumb{color:var(--muted);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:16px}
 .eyebrow{color:var(--blue2);font-size:10px;letter-spacing:2px;font-weight:800}
 h1{font-size:clamp(30px,4.5vw,48px);letter-spacing:-1.8px;line-height:1.13;margin:12px 0 18px}
 h2{font-size:20px;margin:34px 0 12px;letter-spacing:-.4px}
@@ -68,7 +77,7 @@ p{color:var(--body);font-size:14px;line-height:1.85}
 .tile b{display:block;color:var(--blue2);font-size:10px;margin-bottom:8px;letter-spacing:1px}
 .tile strong{display:block;font-size:13px}
 .tile span{display:block;color:var(--muted);font-size:11px;margin-top:7px;line-height:1.6}
-.rules{padding-left:24px;color:var(--body);line-height:1.85;font-size:13px}
+.penalty-tools{display:flex;gap:10px;align-items:center;margin:12px 0 8px}.penalty-tools>input{flex:1;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px;color:var(--text);font-size:12px}.penalty-tools label{font-size:11px;color:var(--body);white-space:nowrap}.penalty-table{width:100%;border-collapse:collapse;font-size:11px;color:var(--text);margin-bottom:26px}.penalty-table th{text-align:left;font-weight:500;text-transform:uppercase;letter-spacing:.4px;background:var(--surface);border:1px solid var(--line);padding:10px}.penalty-table td{border-bottom:1px solid var(--line);padding:9px}.penalty-table td:first-child{width:60%}.penalty-table input{accent-color:var(--blue);pointer-events:none}.penalty-table tr[hidden]{display:none}.rules{padding-left:24px;color:var(--body);line-height:1.85;font-size:13px}
 .rules li{padding:10px 5px;border-bottom:1px solid var(--line)}
 .rules li::marker{color:var(--blue2);font-weight:800}
 .warning{padding:16px;background:rgba(190,122,34,.1);border:1px solid rgba(190,122,34,.35);border-radius:9px;color:#d99b45;font-size:12px;line-height:1.8;margin:22px 0}
@@ -90,7 +99,7 @@ mark{background:rgba(22,137,232,.22);color:inherit;border-radius:2px}
 .no-results{padding:16px;color:var(--muted);font-size:12px}
 footer{text-align:center;border-top:1px solid var(--line);padding:22px;color:var(--muted);font-size:10px}
 .backdrop{display:none}
-@media(max-width:900px){.sidebar{width:275px;transform:translateX(-100%)}.sidebar.open{transform:translateX(0)}main{margin-left:0}.mobile-menu{display:block}.topbar{padding-left:15px}.backdrop.show{display:block;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:15}.content{margin:0 auto 55px;width:min(900px,calc(100% - 38px))}}
+@media(max-width:900px){.hero{width:100%;max-width:100%}.sidebar{width:275px;transform:translateX(-100%)}.sidebar.open{transform:translateX(0)}main{margin-left:0}.mobile-menu{display:block}.topbar{padding-left:15px}.backdrop.show{display:block;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:15}.content{margin:0 auto 55px;width:min(900px,calc(100% - 38px))}}
 @media(max-width:560px){.hero{height:190px;margin-bottom:22px}.hero-title{letter-spacing:-2px}.hero-sub{letter-spacing:7px}.topbar{height:auto;min-height:68px;flex-wrap:wrap;padding:10px 12px;gap:9px}.top-brand{font-size:10px}.top-brand img{width:31px;height:31px}.search-wrap{order:3;flex-basis:100%;max-width:none}.top-actions{margin-left:auto}.icon-btn{width:35px;height:35px}.content{margin-top:30px}.tiles{grid-template-columns:1fr}.page-tools{align-items:flex-start;flex-direction:column}.lead{font-size:14px}h1{font-size:34px}}
 </style>
 </head>
@@ -132,13 +141,56 @@ footer{text-align:center;border-top:1px solid var(--line);padding:22px;color:var
 </main>
 <script>
 const menuGroups = [
- {label:"INÍCIO DO REGULAMENTO",items:[["inicio","Início de todo regulamento"],["basicas","Regras básicas"],["personagem","Regras de personagem"],["punicao","Sistema de punição"]]},
- {label:"ROLEPLAY E PERSONAGENS",items:[["roleplay","Regras de Roleplay"],["powergaming","Power Gaming"],["trash","Trash RP"],["anoes","Regras de Anões"],["criancas","Regras de Crianças"],["gravidez","Regras de Gravidez"],["safe","Área segura"]]},
- {label:"AÇÕES E EVENTOS",items:[["airdrop","Regras Air Drop"],["carroforte","Regras do Carro-Forte"],["acoes","Ações de rua"],["perseguicao","Perseguição"],["sequestro","Sequestro"],["invasao","Invasão FAC vs FAC"],["baque","Regras de Baque"],["guerra","Guerras FAC x FAC"],["dominacao","Dominação"]]},
- {label:"SERVIÇOS E ORGANIZAÇÕES",items:[["publicos","Serviços públicos"],["empregos","Empregos legais"],["policiais","Policiais"],["incursao","Regras de incursão"],["faccoes","Organizações"],["aplicativos","Aplicativos e Chamados"]]},
- {label:"ATENDIMENTO",items:[["suporte","Suporte e Denúncias"]]}
+ {label:"DOCUMENTAÇÃO OFICIAL",items:[
+  ["inicio","Início de todo regulamento","🌐"],
+  ["whitelist","Whitelist Hospitalar","🏥"],
+  ["basicas","Regras Básicas","📚",[
+   ["powergaming","Power Gaming","🚘"],["antiamor","Anti-Amor à Vida","💙"],
+   ["combatlogin","Combat Login","⏱️"],["vdm","Vehicle Deathmatch (VDM)","🚙"],
+   ["rdm","Random Deathmatch (RDM)","🔰"],["trash","Trash RP","✋"],
+   ["copbait","Cop Bait","🚔"],["revenge","Revenge Kill","❗"]
+  ]],
+  ["safe","Área Segura","🟩"],["punicao","Sistema de Punição","🔴"],
+  ["punicaofac","Sistema de Punição FAC","🟡"],["personagem","Regras de Personagem","👤"],
+  ["aplicativos","Aplicativos e Chamados","📱"],["empregos","Regras - Empregos Legais","💼"],
+  ["publicos","Hospital / Retirada de Órgão","🏥"],["policiais","Policiais","🚨",[
+   ["policiacomportamento","Comportamento em Perseguição","🚓"],["flashbang","Flashbang e Gás Lacrimogêneo","🧪"],
+   ["ronda","Ronda Ostensiva","👮"],["incursao","Regras de Incursão","🏴"]
+  ]],
+  ["faccoes","Facções Criminosas","⚔️",[
+   ["favela","Regras de Favelas","☠️"],["trafico","Tráfico de Drogas","🍀"],["guerra","Guerras (Facção x Facção)","🚨"]
+  ]]
+ ]},
+ {label:"TÓPICO 2",items:[
+  ["anoes","Regras de Anões","🧌"],["criancas","Regras de Criança","👶"],
+  ["gravidez","Regras de Gravidez","🤰"],["airdrop","Regras Air Drop","🪂"],
+  ["carroforte","Regras do Carro-Forte","🚗"],["acoes","Regras Ações de Rua","📕"],
+  ["perseguicao","Regras de Perseguição","🚘"],["incursao","R.O/Incursão","🚨"],
+  ["safe","Pacificação","🏳️"],["invasao","Invasão FAC vs FAC","🏴"],
+  ["baque","Regras Granada e Bomba-Relógio","💣"],["dominacao","Domínias In-Game","🟡"],
+  ["acoesfechadas","Ações Fechadas","🔫",[
+   ["perimetro","Perímetro de Ação Fechada","⚠️"]
+  ]],
+  ["sequestro","Sequestro","☠️"],["publicos","Resgate de Prisioneiros","🟣"]
+ ]}
 ];
 const pages = {
+  whitelist:{group:"DOCUMENTAÇÃO OFICIAL",title:"🏥 Whitelist Hospitalar",lead:"Orientações e requisitos para a whitelist hospitalar.",body:`<div class="placeholder">Conteúdo da whitelist hospitalar ainda não consta no arquivo enviado. Insira aqui as regras oficiais da Diamantina.</div>`},
+  antiamor:{group:"REGRAS BÁSICAS",title:"💙 Anti-Amor à Vida",lead:"Regra de preservação da vida do personagem.",body:`<div class="placeholder">Adicione aqui o texto oficial da regra Anti-Amor à Vida.</div>`},
+  combatlogin:{group:"REGRAS BÁSICAS",title:"⏱️ Combat Login",lead:"Regras sobre desconexão durante situações de RP.",body:`<div class="placeholder">Adicione aqui o texto oficial de Combat Login.</div>`},
+  vdm:{group:"REGRAS BÁSICAS",title:"🚙 Vehicle Deathmatch (VDM)",lead:"Regras sobre uso de veículos contra personagens.",body:`<div class="placeholder">Adicione aqui o texto oficial de VDM.</div>`},
+  rdm:{group:"REGRAS BÁSICAS",title:"🔰 Random Deathmatch (RDM)",lead:"Regras sobre agressões sem contexto de RP.",body:`<div class="placeholder">Adicione aqui o texto oficial de RDM.</div>`},
+  copbait:{group:"REGRAS BÁSICAS",title:"🚔 Cop Bait",lead:"Regras sobre provocação intencional de ações policiais.",body:`<div class="placeholder">Adicione aqui o texto oficial de Cop Bait.</div>`},
+  revenge:{group:"REGRAS BÁSICAS",title:"❗ Revenge Kill",lead:"Regras sobre retorno após morte no RP.",body:`<div class="placeholder">Adicione aqui o texto oficial de Revenge Kill.</div>`},
+  punicaofac:{group:"DOCUMENTAÇÃO OFICIAL",title:"🟡 Sistema de Punição FAC",lead:"Tabela de penalidades aplicáveis às facções.",body:`<div class="placeholder">Adicione aqui a tabela oficial de punições de facção.</div>`},
+  policiacomportamento:{group:"POLICIAIS",title:"🚓 Comportamento em Perseguição",lead:"Procedimentos policiais durante perseguições.",body:`<div class="placeholder">Adicione aqui o texto oficial de comportamento em perseguição.</div>`},
+  flashbang:{group:"POLICIAIS",title:"🧪 Flashbang e Gás Lacrimogêneo",lead:"Regras de utilização de equipamentos de controle.",body:`<div class="placeholder">Adicione aqui o texto oficial sobre flashbang e gás lacrimogêneo.</div>`},
+  ronda:{group:"POLICIAIS",title:"👮 Ronda Ostensiva",lead:"Procedimentos para rondas ostensivas.",body:`<div class="placeholder">Adicione aqui o texto oficial de ronda ostensiva.</div>`},
+  favela:{group:"FACÇÕES CRIMINOSAS",title:"☠️ Regras de Favelas",lead:"Regras de atuação nas favelas.",body:`<div class="placeholder">Adicione aqui o texto oficial de regras de favelas.</div>`},
+  trafico:{group:"FACÇÕES CRIMINOSAS",title:"🍀 Tráfico de Drogas",lead:"Regras para atividades de tráfico de drogas.",body:`<div class="placeholder">Adicione aqui o texto oficial de tráfico de drogas.</div>`},
+  acoesfechadas:{group:"TÓPICO 2",title:"🔫 Ações Fechadas",lead:"Regras para ações fechadas.",body:`<div class="placeholder">Adicione aqui o texto oficial de ações fechadas.</div>`},
+  perimetro:{group:"AÇÕES FECHADAS",title:"⚠️ Perímetro de Ação Fechada",lead:"Regras para delimitação de perímetro.",body:`<div class="placeholder">Adicione aqui o texto oficial de perímetro de ação fechada.</div>`},
+
  inicio:{group:"BEM-VINDO À DIAMANTINA",title:"Central de Regras",lead:"Bem-vindo à central oficial de regras da Diamantina Roleplay. Consulte as normas, orientações e procedimentos para manter uma experiência de roleplay respeitosa e organizada.",body:`<div class="callout"><strong>⚠️ IMPORTANTE</strong><br>Leia atentamente todas as regras. O desconhecimento do regulamento não elimina a responsabilidade por uma infração. Os textos importados devem ser revisados pela administração antes de serem adotados oficialmente pela Diamantina.</div><h2>Explore o regulamento</h2><p>Use o menu lateral ou a pesquisa para localizar uma categoria ou regra específica.</p>`},
  basicas:{group:"INÍCIO DO REGULAMENTO",title:"📚 Regras Básicas",lead:"Normas gerais de convivência, segurança e conduta no servidor.",body:`<ol class="rules">
 <li>Qualquer atitude envolvendo calúnia ou difamação para prejudicar jogador ou membro da equipe poderá resultar em advertência e, conforme a gravidade, banimento. São proibidas atitudes discriminatórias, incluindo homofobia, racismo, bullying e discurso de ódio abusivo, desnecessário ou tóxico.</li>
@@ -168,9 +220,7 @@ const pages = {
 <li>PD do personagem é a perda definitiva do personagem após uma situação considerada gravíssima.</li>
 <li>Líder de organização, legal ou ilegal, não pode ser setado em outro painel, seja como emprego primário ou secundário.</li>
 </ol>`},
- punicao:{group:"INÍCIO DO REGULAMENTO",title:"🔴 Sistema de Punição",lead:"Tabela de penalidades reproduzida do regulamento consultado. Confirme os valores e critérios com a administração antes de aplicar na Diamantina.",body:`<h2>Advertências e tempo de prisão</h2><ol class="rules">
-<li>RDM — 800 meses.</li><li>VDM — 800 meses.</li><li>Anti Amor à Vida — 800 meses.</li><li>RP tóxico — 800 meses.</li><li>Combat Logging (CL) — 900 meses.</li><li>Matar em área safe — 1.000 meses.</li><li>Meta Gaming — 800 meses.</li><li>Power Gaming — 500 meses.</li><li>Forçar RP — 500 meses.</li><li>Assaltar fora de horário — 700 meses.</li><li>Invasão em área vermelha sem motivo — 700 meses.</li><li>Loot indevido — 500 meses.</li><li>Ação sem uniforme ou roupa da organização — 800 meses.</li><li>Reanimar jogadores com ações em andamento — 500 meses.</li><li>Persistir em erro após comprovação — 700 meses.</li><li>No Props — até 1.000 meses, conforme o recurso utilizado.</li><li>Outras quebras de regras — equipe staff poderá decidir entre 100 e 500 meses.</li><li>Chamar bombeiros apertando F após morrer em ação ainda em andamento — 300 meses.</li>
-</ol><h2>Banimentos</h2><ul class="rules">
+ punicao:{group:"INÍCIO DO REGULAMENTO",title:"🔴 Sistema de Punição",lead:"Tabela de penalidades reproduzida do regulamento consultado. Confirme os valores e critérios com a administração antes de aplicar na Diamantina.",body:`<tr><td>RDM</td><td>800 meses.</td><td><input type="checkbox" checked disabled aria-label="Advertência"></td></tr><tr><td>VDM</td><td>800 meses.</td><td><input type="checkbox" checked disabled aria-label="Advertência"></td></tr><tr><td>Anti Amor à Vida</td><td>800 meses.</td><td><input type="checkbox" checked disabled aria-label="Advertência"></td></tr><tr><td>RP tóxico</td><td>800 meses.</td><td><input type="checkbox" checked disabled aria-label="Advertência"></td></tr><tr><td>Combat Logging (CL)</td><td>900 meses.</td><td><input type="checkbox" checked disabled aria-label="Advertência"></td></tr><tr><td>Matar em área safe</td><td>1.000 meses.</td><td><input type="checkbox" checked disabled aria-label="Advertência"></td></tr><tr><td>Meta Gaming</td><td>800 meses.</td><td><input type="checkbox" checked disabled aria-label="Advertência"></td></tr><tr><td>Power Gaming</td><td>500 meses.</td><td><input type="checkbox"  disabled aria-label="Advertência"></td></tr><tr><td>Forçar RP</td><td>500 meses.</td><td><input type="checkbox"  disabled aria-label="Advertência"></td></tr><tr><td>Assaltar fora de horário</td><td>700 meses.</td><td><input type="checkbox"  disabled aria-label="Advertência"></td></tr><tr><td>Invasão em área vermelha sem motivo</td><td>700 meses.</td><td><input type="checkbox"  disabled aria-label="Advertência"></td></tr><tr><td>Loot indevido</td><td>500 meses.</td><td><input type="checkbox"  disabled aria-label="Advertência"></td></tr><tr><td>Ação sem uniforme ou roupa da organização</td><td>800 meses.</td><td><input type="checkbox"  disabled aria-label="Advertência"></td></tr><tr><td>Reanimar jogadores com ações em andamento</td><td>500 meses.</td><td><input type="checkbox"  disabled aria-label="Advertência"></td></tr><tr><td>Persistir em erro após comprovação</td><td>700 meses.</td><td><input type="checkbox"  disabled aria-label="Advertência"></td></tr><tr><td>No Props</td><td>até 1.000 meses, conforme o recurso utilizado.</td><td><input type="checkbox" checked disabled aria-label="Advertência"></td></tr><tr><td>Outras quebras de regras</td><td>equipe staff poderá decidir entre 100 e 500 meses.</td><td><input type="checkbox" checked disabled aria-label="Advertência"></td></tr><tr><td>Chamar bombeiros apertando F após morrer em ação ainda em andamento</td><td>300 meses.</td><td><input type="checkbox" checked disabled aria-label="Advertência"></td></tr></tbody></table><h2>Banimentos</h2><ul class="rules">
 <li>Cheat — banimento permanente.</li><li>RPF Aimbot — banimento permanente.</li><li>No-Props — o tratamento depende do recurso utilizado; o texto consultado menciona possibilidade de revogação e conversão em advertência in-game.</li><li>Negar pedido de telagem — o texto consultado prevê possibilidade de revisão via procedimento de unban.</li><li>Dark RP — banimento permanente.</li><li>Convidar jogadores para outro servidor, pelo Discord ou in-game — o texto consultado prevê possibilidade de revisão via unban.</li><li>Windows ReviOS ou ISO modificada que interrompa processos — banimento permanente.</li><li>Windows Defender removido em Windows legítimo — desbanimento somente após formatação.</li><li>Exclusão de C:\ no Windows Defender — banimento e exigência de unban e formatação.</li><li>Rastro de cheat expirado há mais de três meses — desbanimento somente após formatação.</li>
 </ul><div class="warning"><strong>⚠️ ATENÇÃO:</strong> Esta tabela é uma transcrição do material consultado e pode conter valores ou procedimentos próprios do servidor de origem. A administração da Diamantina deve validar cada item antes de publicar como regra oficial.</div>`},
  roleplay:{group:"ROLEPLAY E PERSONAGENS",title:"🎭 Regras de Roleplay",lead:"Princípios de interpretação e conduta durante as situações de roleplay.",body:`<div class="placeholder">O índice público consultado não forneceu uma página completa e específica de regras gerais de Roleplay. Consulte também as páginas de Regras Básicas, Power Gaming, Trash RP, Personagem e Ações de Rua. O conteúdo específico desta categoria precisa ser confirmado ou enviado pela administração.</div>`},
@@ -403,22 +453,32 @@ const pages = {
 
 function placeholder(message){return `<div class="placeholder">📝 <strong>Conteúdo pendente</strong><br>${message}</div>`}
 let currentPage="inicio";
-const pageIcons = {
- inicio:"💠",basicas:"📚",personagem:"👤",punicao:"🔴",roleplay:"🎭",
- powergaming:"🚗",trash:"✋",anoes:"🧌",criancas:"👶",gravidez:"🤰",safe:"🟩",
- airdrop:"🪂",carroforte:"🚚",acoes:"📕",perseguicao:"🚓",sequestro:"☠️",
- invasao:"🏴",baque:"💥",guerra:"🚨",dominacao:"🎯",publicos:"🏥",
- empregos:"💼",policiais:"👮",incursao:"🚔",faccoes:"🏢",aplicativos:"📱",
- suporte:"🛟"
-};
+const pageIcons = {};
 function buildMenu(){
  const nav=document.getElementById("navigation");nav.innerHTML="";
- menuGroups.forEach(group=>{
+ menuGroups.forEach((group,gi)=>{
   const heading=document.createElement("div");heading.className="group";heading.textContent=group.label;nav.appendChild(heading);
-  group.items.forEach(([id,label])=>{
-   const a=document.createElement("a");a.href="#"+id;a.dataset.page=id;
-   a.innerHTML=`<span class="nav-num">${pageIcons[id]||"📌"}</span><span>${label}</span>`;
-   a.addEventListener("click",e=>{e.preventDefault();showPage(id)});nav.appendChild(a);
+  group.items.forEach(item=>{
+   const [id,label,emoji,children]=item;
+   if(children){
+    const wrap=document.createElement("div");wrap.className="nav-parent";
+    const btn=document.createElement("button");btn.className="nav a nav-toggle";btn.type="button";
+    btn.innerHTML=`<span class="nav-num">${emoji||"📌"}</span><span>${label}</span><span class="nav-chevron">⌄</span>`;
+    const sub=document.createElement("div");sub.className="nav-children";
+    children.forEach(([cid,clabel,cemoji])=>{
+      const link=document.createElement("a");link.href="#"+cid;link.dataset.page=cid;
+      link.innerHTML=`<span class="nav-num">${cemoji||"📌"}</span><span>${clabel}</span>`;
+      link.addEventListener("click",e=>{e.preventDefault();showPage(cid)});
+      sub.appendChild(link);
+    });
+    btn.addEventListener("click",()=>{wrap.classList.toggle("expanded");});
+    wrap.append(btn,sub);nav.appendChild(wrap);
+   }else{
+    const link=document.createElement("a");link.href="#"+id;link.dataset.page=id;
+    link.innerHTML=`<span class="nav-num">${emoji||"📌"}</span><span>${label}</span>`;
+    link.addEventListener("click",e=>{e.preventDefault();showPage(id)});
+    nav.appendChild(link);
+   }
   });
  });
 }
@@ -474,6 +534,7 @@ function setTheme(light){
 document.getElementById("themeBtn").addEventListener("click",()=>setTheme(!document.documentElement.classList.contains("light")));
 document.getElementById("searchInput").addEventListener("input",runSearch);
 document.getElementById("searchInput").addEventListener("keydown",e=>{if(e.key==="Escape"){e.target.value="";runSearch()}});
+document.addEventListener("input",e=>{if(e.target.id==="penaltySearch"||e.target.id==="penaltyOnlyWarn"){const q=document.getElementById("penaltySearch").value.toLocaleLowerCase("pt-BR");const only=document.getElementById("penaltyOnlyWarn").checked;document.querySelectorAll(".penalty-table tbody tr").forEach(tr=>{tr.hidden=!(tr.innerText.toLocaleLowerCase("pt-BR").includes(q)&&(!only||tr.querySelector('input[type=checkbox]').checked));});}});
 document.getElementById("year").textContent=new Date().getFullYear();
 buildMenu();
 let initial=location.hash.slice(1);showPage(pages[initial]?initial:"inicio");
