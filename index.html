@@ -24,7 +24,7 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;min-height:100vh}
 button,input{font:inherit}
 button{cursor:pointer}
-.sidebar{position:fixed;inset:0 auto 0 0;width:286px;background:var(--sidebar);border-right:1px solid var(--line);padding:20px 15px 16px;overflow-y:auto;z-index:20;transition:transform .25s ease}
+.sidebar{position:fixed;inset:0 auto 0 0;width:300px;background:var(--sidebar);border-right:1px solid var(--line);padding:20px 15px 16px;overflow-y:auto;z-index:20;transition:transform .25s ease}
 .brand{display:flex;align-items:center;gap:12px;padding:7px 9px 22px;border-bottom:1px solid var(--line);margin-bottom:16px}
 .logo{width:58px;height:54px;object-fit:contain}
 .brand strong{display:block;font-size:13px;letter-spacing:1.3px}
@@ -35,7 +35,7 @@ button{cursor:pointer}
 .nav a.active{box-shadow:inset 3px 0 var(--blue2)}
 .nav a .nav-num{font-size:15px;min-width:23px;text-align:center}
 .footer-side{margin-top:24px;border-top:1px solid var(--line);padding:16px 10px;color:var(--muted);font-size:10px;line-height:1.8}
-main{margin-left:286px;min-height:100vh;display:flex;flex-direction:column}
+main{margin-left:300px;min-height:100vh;display:flex;flex-direction:column}
 .topbar{height:54px;position:sticky;top:0;z-index:10;background:#3269d9;display:flex;align-items:center;gap:18px;padding:0 clamp(18px,4vw,54px);box-shadow:0 5px 22px rgba(0,70,130,.2)}
 .top-brand{display:flex;align-items:center;gap:10px;color:white;font-size:12px;font-weight:800;letter-spacing:1px;white-space:nowrap}
 .top-brand img{width:37px;height:37px;object-fit:contain}
@@ -49,8 +49,12 @@ main{margin-left:286px;min-height:100vh;display:flex;flex-direction:column}
 .icon-btn{width:39px;height:39px;border:1px solid rgba(255,255,255,.3);border-radius:9px;background:rgba(0,35,75,.2);color:white;font-size:17px}
 .icon-btn:hover{background:rgba(0,35,75,.38)}
 .mobile-menu{display:none}
-.content{width:min(1120px,calc(100% - 64px));margin:0 auto 70px;flex:1}
-.hero{height:270px;margin:0 0 30px;border-radius:0 0 12px 12px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;background:radial-gradient(ellipse at 20% 20%,rgba(0,225,232,.65),transparent 35%),radial-gradient(ellipse at 80% 80%,rgba(0,154,255,.5),transparent 40%),linear-gradient(125deg,#061e2c,#092c36 45%,#063c49);}\n.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 28px,rgba(70,245,245,.08) 29px 31px),radial-gradient(circle at 50% 50%,transparent 0 28%,rgba(0,0,0,.3) 70%);}\n.hero-inner{position:relative;z-index:1;color:#fff;text-shadow:0 4px 24px rgba(0,0,0,.35)}\n.hero-title{font-size:clamp(48px,8vw,100px);font-weight:800;letter-spacing:-5px;line-height:.95}\n.hero-sub{font-size:12px;font-weight:800;letter-spacing:12px;margin-top:8px}\n.breadcrumb{color:var(--muted);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:16px}
+.content{width:min(1120px,calc(100% - 48px));margin:0 auto 70px;flex:1}
+.hero{height:270px;margin:0 0 30px;border-radius:0 0 12px 12px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;background:radial-gradient(ellipse at 20% 20%,rgba(0,225,232,.65),transparent 35%),radial-gradient(ellipse at 80% 80%,rgba(0,154,255,.5),transparent 40%),linear-gradient(125deg,#061e2c,#092c36 45%,#063c49);}
+.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 28px,rgba(70,245,245,.08) 29px 31px),radial-gradient(circle at 50% 50%,transparent 0 28%,rgba(0,0,0,.3) 70%);}
+.hero-inner{position:relative;z-index:1;color:#fff;text-shadow:0 4px 24px rgba(0,0,0,.35)}
+.hero-title{font-size:clamp(48px,8vw,100px);font-weight:800;letter-spacing:-5px;line-height:.95}
+.hero-sub{font-size:12px;font-weight:800;letter-spacing:12px;margin-top:8px}\n.breadcrumb{color:var(--muted);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:16px}
 .eyebrow{color:var(--blue2);font-size:10px;letter-spacing:2px;font-weight:800}
 h1{font-size:clamp(30px,4.5vw,48px);letter-spacing:-1.8px;line-height:1.13;margin:12px 0 18px}
 h2{font-size:20px;margin:34px 0 12px;letter-spacing:-.4px}
@@ -86,7 +90,7 @@ mark{background:rgba(22,137,232,.22);color:inherit;border-radius:2px}
 .no-results{padding:16px;color:var(--muted);font-size:12px}
 footer{text-align:center;border-top:1px solid var(--line);padding:22px;color:var(--muted);font-size:10px}
 .backdrop{display:none}
-@media(max-width:900px){.sidebar{width:275px;transform:translateX(-100%)}.sidebar.open{transform:translateX(0)}main{margin-left:0}.mobile-menu{display:block}.topbar{padding-left:15px}.backdrop.show{display:block;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:15}.content{margin:38px auto 55px;width:min(900px,calc(100% - 38px))}}
+@media(max-width:900px){.sidebar{width:275px;transform:translateX(-100%)}.sidebar.open{transform:translateX(0)}main{margin-left:0}.mobile-menu{display:block}.topbar{padding-left:15px}.backdrop.show{display:block;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:15}.content{margin:0 auto 55px;width:min(900px,calc(100% - 38px))}}
 @media(max-width:560px){.hero{height:190px;margin-bottom:22px}.hero-title{letter-spacing:-2px}.hero-sub{letter-spacing:7px}.topbar{height:auto;min-height:68px;flex-wrap:wrap;padding:10px 12px;gap:9px}.top-brand{font-size:10px}.top-brand img{width:31px;height:31px}.search-wrap{order:3;flex-basis:100%;max-width:none}.top-actions{margin-left:auto}.icon-btn{width:35px;height:35px}.content{margin-top:30px}.tiles{grid-template-columns:1fr}.page-tools{align-items:flex-start;flex-direction:column}.lead{font-size:14px}h1{font-size:34px}}
 </style>
 </head>
@@ -113,6 +117,12 @@ footer{text-align:center;border-top:1px solid var(--line);padding:22px;color:var
     <div class="top-actions"><button class="icon-btn" id="themeBtn" title="Alternar tema" aria-label="Alternar tema">☼</button></div>
   </header>
   <section class="content">
+    <div class="hero" aria-label="Banner Diamantina Roleplay">
+      <div class="hero-inner">
+        <div class="hero-title">DIAMANTINA</div>
+        <div class="hero-sub">ROLEPLAY</div>
+      </div>
+    </div>
     <div class="breadcrumb" id="breadcrumb">Diamantina / Regulamento</div>
     <div class="page-tools"><span class="hint">CENTRAL DE REGRAS · DIAMANTINA ROLEPLAY</span><button class="copy-btn" id="copyBtn" onclick="copyCurrentPage()">▣ &nbsp; Copiar conteúdo</button></div>
     <div class="search-results" id="searchResults"></div>
@@ -388,11 +398,19 @@ const pages = {
 <li>Todos os chamados devem conter descrição da situação ou problema.</li>
 <li>Chamados vagos como “Me ajude”, “Socorro”, “Vem cá lindo”, “Preciso conversar com você” ou “ADM quando der vem aqui” poderão ser ignorados.</li>
 </ol>`},
- suporte:{group:"ATENDIMENTO",title:"🛟 Suporte e Denúncias",lead:"Utilize os canais oficiais da Diamantina para solicitar ajuda ou encaminhar uma denúncia.",body:`<div class="placeholder">Adicione aqui o link oficial do Discord, o canal de tickets e as orientações de atendimento da administração da Diamantina.</div>`}
+ suporte:{group:"ATENDIMENTO",title:"🛟 Suporte e Denúncias",lead:"Utilize os canais oficiais da Diamantina para solicitar ajuda ou encaminhar uma denúncia.",body:`<div class="placeholder">https://discord.gg/jeheAtjrh4</div>`}
 };
 
 function placeholder(message){return `<div class="placeholder">📝 <strong>Conteúdo pendente</strong><br>${message}</div>`}
 let currentPage="inicio";
+const pageIcons = {
+ inicio:"💠",basicas:"📚",personagem:"👤",punicao:"🔴",roleplay:"🎭",
+ powergaming:"🚗",trash:"✋",anoes:"🧌",criancas:"👶",gravidez:"🤰",safe:"🟩",
+ airdrop:"🪂",carroforte:"🚚",acoes:"📕",perseguicao:"🚓",sequestro:"☠️",
+ invasao:"🏴",baque:"💥",guerra:"🚨",dominacao:"🎯",publicos:"🏥",
+ empregos:"💼",policiais:"👮",incursao:"🚔",faccoes:"🏢",aplicativos:"📱",
+ suporte:"🛟"
+};
 function buildMenu(){
  const nav=document.getElementById("navigation");nav.innerHTML="";
  menuGroups.forEach(group=>{
